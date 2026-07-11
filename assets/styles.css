@@ -195,18 +195,29 @@ ul { list-style: none; }
 }
 .callout strong { color: var(--navy); }
 
-/* ─── Value cards (Culture) ────────────────────────────── */
-.value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 20px; }
-.value-card { border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.12); display: flex; flex-direction: column; }
-.value-card-header { padding: 14px 18px; font-size: 17px; font-weight: 700; color: white; letter-spacing: -0.2px; }
-.value-card-body { background: white; padding: 16px 18px; font-size: 13px; color: var(--gray-700); line-height: 1.65; flex: 1; }
-.value-card-body p { margin-bottom: 10px; }
-.value-card-body p:last-child { margin-bottom: 0; }
-.value-card-body strong { color: var(--navy); }
-.value-card.excellence .value-card-header { background: var(--pink); }
-.value-card.velocity .value-card-header { background: var(--coral); }
-.value-card.team .value-card-header { background: var(--navy); }
-.value-card.character .value-card-header { background: var(--green); }
+/* ─── Value accordion (Culture) ────────────────────────── */
+.value-accordion { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.value-accordion-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-400); padding: 12px 20px 6px; }
+.value-item { border-top: 1px solid var(--gray-100); }
+.value-item:first-of-type { border-top: none; }
+.value-item summary {
+  list-style: none; cursor: pointer; padding: 13px 20px; display: flex; align-items: center; gap: 14px;
+  border-left: 4px solid transparent; transition: background 0.12s;
+}
+.value-item summary::-webkit-details-marker { display: none; }
+.value-item summary::after { content: '+'; margin-left: auto; color: var(--gray-400); font-size: 17px; font-weight: 400; flex-shrink: 0; }
+.value-item[open] summary::after { content: '−'; }
+.value-item summary:hover { background: var(--gray-50); }
+.value-item-name { font-size: 14px; font-weight: 700; color: var(--navy); min-width: 88px; flex-shrink: 0; }
+.value-item-hook { font-size: 12.5px; color: var(--gray-400); }
+.value-item[open] .value-item-hook { display: none; }
+.value-item.excellence summary { border-left-color: var(--pink); }
+.value-item.velocity summary { border-left-color: var(--coral); }
+.value-item.team summary { border-left-color: var(--navy); }
+.value-item.character summary { border-left-color: var(--green); }
+.value-item p { padding: 0 20px 14px 20px; font-size: 13px; color: var(--gray-700); line-height: 1.6; }
+.value-item p + p { margin-top: -6px; }
+.value-item p strong { color: var(--navy); }
 
 /* ─── Tool card (Coaching page) ───────────────────────── */
 .tool-card {
