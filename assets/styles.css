@@ -196,8 +196,14 @@ ul { list-style: none; }
 .callout strong { color: var(--navy); }
 
 /* ─── Coach / Culture side-by-side panels ─────────────── */
-.coach-panel { background: var(--navy-light); }
+.coach-panel { background: var(--navy-light); position: relative; overflow: hidden; }
 .coach-panel .card-title { color: var(--navy-dark); }
+.coach-panel .card-tag, .coach-panel .card-title, .coach-panel .card-body { position: relative; z-index: 1; }
+.panel-watermark {
+  position: absolute; bottom: -18px; right: -18px; width: 170px; height: 170px;
+  fill: none; stroke: var(--navy); stroke-width: 1.6; opacity: 0.10; transform: rotate(-8deg);
+  pointer-events: none;
+}
 
 /* ─── Value accordion (Culture) ────────────────────────── */
 .value-accordion { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
@@ -206,14 +212,19 @@ ul { list-style: none; }
 .value-item { border-top: 1px solid rgba(0,0,0,0.06); }
 .value-item:first-of-type { border-top: none; }
 .value-item summary {
-  list-style: none; cursor: pointer; padding: 13px 20px; display: flex; align-items: center; gap: 14px;
+  list-style: none; cursor: pointer; padding: 13px 20px; display: flex; align-items: center; gap: 12px;
   border-left: 4px solid transparent; transition: background 0.12s;
 }
 .value-item summary::-webkit-details-marker { display: none; }
 .value-item summary::after { content: '+'; margin-left: auto; color: var(--gray-400); font-size: 17px; font-weight: 400; flex-shrink: 0; }
 .value-item[open] summary::after { content: '−'; }
 .value-item summary:hover { background: rgba(255,255,255,0.55); }
-.value-item-name { font-size: 14px; font-weight: 700; color: var(--navy); min-width: 88px; flex-shrink: 0; }
+.value-icon { display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 30px; height: 30px; border-radius: 8px; background: rgba(255,255,255,0.6); }
+.value-item.excellence .value-icon { color: var(--pink); }
+.value-item.velocity .value-icon { color: var(--coral); }
+.value-item.team .value-icon { color: var(--navy); }
+.value-item.character .value-icon { color: var(--green); }
+.value-item-name { font-size: 14px; font-weight: 700; color: var(--navy); min-width: 78px; flex-shrink: 0; }
 .value-item-hook { font-size: 12.5px; color: var(--gray-400); }
 .value-item[open] .value-item-hook { display: none; }
 .value-item.excellence summary { border-left-color: var(--pink); }
