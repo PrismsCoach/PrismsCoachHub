@@ -61,6 +61,7 @@
     CA: { region: 'California', people: [{ name: 'Shane Durkan', role: 'Teacher Coach' }, { name: 'Jeremy Fishman', role: 'Teacher Coach' }, { name: 'Danny Herrera', role: 'Teacher Coach' }, { open: true }] },
     FL: { region: 'Florida', people: [{ name: 'Michelle Walker', role: 'Teacher Coach' }, { name: 'Rodolpho Loureiro', role: 'Teacher Coach' }, { name: 'Taheerah Nasai', role: 'Teacher Coach' }, { name: 'Jordan Rhoden', role: 'Teacher Coach' }, { name: 'Jerry Silva', role: 'Teacher Coach' }, { open: true }] },
     GA: { region: 'Georgia', people: [{ name: 'Sandreka Brown', role: 'Teacher Coach' }] },
+    MI: { region: 'Michigan', people: [{ open: true }, { open: true }, { open: true }] },
     MD: { region: 'Mid Atlantic', people: [{ name: 'Philip Cygan', role: 'Teacher Coach' }] },
     DC: { region: 'Mid Atlantic', people: [{ open: true }] },
     NJ: { region: 'New Jersey', people: [{ name: 'Samantha D’Egidio', role: 'Teacher Coach' }, { name: 'Amber Ginsberg', role: 'Teacher Coach' }, { name: 'Jessenia Martinez', role: 'Teacher Coach' }, { open: true }] },
