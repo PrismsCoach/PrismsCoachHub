@@ -55,8 +55,8 @@
 
   var COACHES = {
     IL: { region: 'Leadership', people: [{ name: 'Carolyn Scanlon', role: 'Professional Learning Manager' }] },
-    MA: { region: 'Travel', people: [{ name: 'Alex Jennison', role: 'Teacher Coach' }] },
-    TX: { region: 'Travel', people: [{ name: 'Doug Torres', role: 'Teacher Coach' }] },
+    MA: { region: 'Travel', travel: true, people: [{ name: 'Alex Jennison', role: 'Travel Coach' }] },
+    TX: { region: 'Travel', travel: true, people: [{ name: 'Doug Torres', role: 'Travel Coach' }] },
     AL: { region: 'Alabama', people: [{ name: 'Tynisa Williams', role: 'Teacher Coach' }, { name: 'Taajah Witherspoon', role: 'Teacher Coach' }] },
     CA: { region: 'California', people: [{ name: 'Shane Durkan', role: 'Teacher Coach' }, { name: 'Jeremy Fishman', role: 'Teacher Coach' }, { name: 'Danny Herrera', role: 'Teacher Coach' }, { open: true }] },
     FL: { region: 'Florida', people: [{ name: 'Michelle Walker', role: 'Teacher Coach' }, { name: 'Rodolpho Loureiro', role: 'Teacher Coach' }, { name: 'Taheerah Nasai', role: 'Teacher Coach' }, { name: 'Jordan Rhoden', role: 'Teacher Coach' }, { name: 'Jerry Silva', role: 'Teacher Coach' }, { open: true }] },
@@ -77,11 +77,11 @@
   STATES.forEach(function (state) {
     var data = COACHES[state.abbr];
     var tile = document.createElement('div');
-    tile.className = 'state-tile' + (data ? ' has-coaches' : '');
+    tile.className = 'state-tile' + (data ? ' has-coaches' : '') + (data && data.travel ? ' travel-tile' : '');
     tile.style.gridRow = state.row;
     tile.style.gridColumn = state.col;
     tile.textContent = state.abbr;
-    tile.title = state.name;
+    tile.title = state.name + (data && data.travel ? ' (Travel — supports nationwide)' : '');
 
     if (data) {
       var filledCount = data.people.filter(function (p) { return !p.open; }).length;
@@ -90,6 +90,12 @@
         badge.className = 'state-tile-count';
         badge.textContent = filledCount;
         tile.appendChild(badge);
+      }
+      if (data.travel) {
+        var plane = document.createElement('span');
+        plane.className = 'state-tile-travel';
+        plane.textContent = '✈';
+        tile.appendChild(plane);
       }
       tile.addEventListener('click', function () {
         document.querySelectorAll('.state-tile.selected').forEach(function (t) { t.classList.remove('selected'); });
@@ -103,7 +109,8 @@
 
   function renderDetail(state, data) {
     var html = '<div class="map-detail-state">' + state.name + '</div>';
-    html += '<div class="map-detail-region">' + data.region + '</div>';
+    html += '<div class="map-detail-region">' + data.region +
+      (data.travel ? ' — based here, supports districts nationwide' : '') + '</div>';
     data.people.forEach(function (p) {
       if (p.open) {
         html += '<div class="map-detail-coach open-role"><span class="map-detail-dot"></span>Open role</div>';
