@@ -195,10 +195,15 @@ ul { list-style: none; }
 }
 .callout strong { color: var(--navy); }
 
+/* ─── Coach / Culture side-by-side panels ─────────────── */
+.coach-panel { background: var(--navy-light); }
+.coach-panel .card-title { color: var(--navy-dark); }
+
 /* ─── Value accordion (Culture) ────────────────────────── */
 .value-accordion { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.value-accordion.culture-panel { background: var(--coral-light); }
 .value-accordion-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-400); padding: 12px 20px 6px; }
-.value-item { border-top: 1px solid var(--gray-100); }
+.value-item { border-top: 1px solid rgba(0,0,0,0.06); }
 .value-item:first-of-type { border-top: none; }
 .value-item summary {
   list-style: none; cursor: pointer; padding: 13px 20px; display: flex; align-items: center; gap: 14px;
@@ -207,7 +212,7 @@ ul { list-style: none; }
 .value-item summary::-webkit-details-marker { display: none; }
 .value-item summary::after { content: '+'; margin-left: auto; color: var(--gray-400); font-size: 17px; font-weight: 400; flex-shrink: 0; }
 .value-item[open] summary::after { content: '−'; }
-.value-item summary:hover { background: var(--gray-50); }
+.value-item summary:hover { background: rgba(255,255,255,0.55); }
 .value-item-name { font-size: 14px; font-weight: 700; color: var(--navy); min-width: 88px; flex-shrink: 0; }
 .value-item-hook { font-size: 12.5px; color: var(--gray-400); }
 .value-item[open] .value-item-hook { display: none; }
