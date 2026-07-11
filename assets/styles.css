@@ -221,6 +221,85 @@ ul { list-style: none; }
 /* ─── Frequently used resources strip (home) ──────────── */
 .strip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; }
 
+/* ─── Jump nav (Coach HQ) ──────────────────────────────── */
+.jump-nav { display: flex; gap: 8px; flex-wrap: wrap; padding: 16px 24px 0; max-width: var(--max-width); margin: 0 auto; }
+.jump-link {
+  font-size: 12.5px; font-weight: 700; color: var(--navy); background: var(--navy-light);
+  padding: 7px 14px; border-radius: 999px; transition: background 0.12s, color 0.12s;
+}
+.jump-link:hover { background: var(--navy); color: white; }
+
+/* ─── Pull quote ───────────────────────────────────────── */
+.pull-quote {
+  border-left: 4px solid var(--pink);
+  padding: 4px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+/* ─── State grid map ───────────────────────────────────── */
+.map-wrap { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 900px) { .map-wrap { grid-template-columns: 1fr 300px; } }
+.state-grid {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 4px;
+  aspect-ratio: 13 / 8;
+}
+.state-tile {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--gray-100); color: var(--gray-400);
+  border-radius: 4px; font-size: 10px; font-weight: 700;
+  cursor: default; position: relative; border: 1.5px solid transparent;
+  transition: background 0.12s, border-color 0.12s, transform 0.1s;
+}
+.state-tile.has-coaches { background: var(--navy-light); color: var(--navy); cursor: pointer; }
+.state-tile.has-coaches:hover { background: var(--navy); color: white; transform: scale(1.08); z-index: 2; }
+.state-tile.has-coaches.selected { background: var(--pink); color: white; border-color: var(--pink-dark); transform: scale(1.08); z-index: 2; }
+.state-tile-count {
+  position: absolute; top: -5px; right: -5px;
+  background: var(--coral); color: white; font-size: 9px; font-weight: 700;
+  width: 15px; height: 15px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid white;
+}
+.map-legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 11.5px; color: var(--gray-600); }
+.map-legend-swatch { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+
+.map-detail {
+  background: white; border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 20px; align-self: start; position: sticky; top: calc(var(--header-h) + 16px);
+}
+.map-detail-empty { color: var(--gray-400); font-size: 13px; line-height: 1.6; }
+.map-detail-state { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+.map-detail-region { font-size: 11.5px; color: var(--gray-400); margin-bottom: 12px; }
+.map-detail-coach { display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid var(--gray-100); font-size: 13px; color: var(--gray-700); }
+.map-detail-coach:first-of-type { border-top: none; }
+.map-detail-coach.open-role { color: var(--gray-400); font-style: italic; }
+.map-detail-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); flex-shrink: 0; }
+.map-detail-coach.open-role .map-detail-dot { background: var(--gray-300); }
+
+/* ─── Handbook collapsibles ────────────────────────────── */
+.handbook-item { background: white; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 12px; overflow: hidden; }
+.handbook-item summary {
+  padding: 16px 20px; cursor: pointer; font-size: 14.5px; font-weight: 700; color: var(--navy);
+  display: flex; align-items: center; justify-content: space-between; list-style: none;
+}
+.handbook-item summary::-webkit-details-marker { display: none; }
+.handbook-item summary::after { content: '+'; font-size: 18px; color: var(--pink); font-weight: 400; }
+.handbook-item[open] summary::after { content: '−'; }
+.handbook-item summary:hover { background: var(--gray-50); }
+.handbook-body { padding: 0 20px 20px; font-size: 13.5px; color: var(--gray-700); line-height: 1.7; }
+.handbook-body h4 { font-size: 12.5px; font-weight: 700; color: var(--coral-dark); margin: 14px 0 6px; text-transform: uppercase; letter-spacing: 0.4px; }
+.handbook-body h4:first-child { margin-top: 0; }
+.handbook-body ul { padding-left: 18px; list-style: disc; margin-bottom: 8px; }
+.handbook-body ul li { margin-bottom: 4px; }
+.handbook-body p { margin-bottom: 8px; }
+.handbook-note { background: var(--coral-light); border-left: 3px solid var(--coral); border-radius: 6px; padding: 8px 12px; font-size: 12px; color: var(--coral-dark); margin: 8px 0; }
+
 /* ─── Footer ───────────────────────────────────────────── */
 .site-footer {
   border-top: 1px solid var(--gray-200);
