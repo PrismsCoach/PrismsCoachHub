@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prisms Coach Hub · Integration &amp; Mapping</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/styles.css?v=10" />
+  <link rel="stylesheet" href="assets/styles.css?v=11" />
 </head>
 <body>
 
@@ -41,22 +41,6 @@
   </div>
 
   <section class="section">
-    <div class="section-inner">
-      <div class="card">
-        <div class="card-title">What are you trying to do?</div>
-        <div class="card-desc">Pick what fits — it'll jump you to the most relevant resources below.</div>
-        <div class="task-filter-grid" id="task-filter">
-          <button class="task-filter-pill" data-tag="first-meeting">I'm meeting with a district for the first time</button>
-          <button class="task-filter-pill" data-tag="unit-mapping">I'm preparing for Teacher Institute unit mapping</button>
-          <button class="task-filter-pill" data-tag="update-plan">I'm updating a curriculum integration plan</button>
-          <button class="task-filter-pill" data-tag="examples">I need completed examples</button>
-        </div>
-        <div class="task-filter-active" id="task-filter-active" style="display:none;"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top: 0;">
     <div class="section-inner two-col">
       <div class="card">
         <div class="card-tag">Deliverables</div>
@@ -101,17 +85,17 @@
     </div>
   </section>
 
-  <section class="section" style="padding-top: 0;" id="most-used-resources">
+  <section class="section" style="padding-top: 0;">
     <div class="section-inner">
       <div class="section-title">Most Used Resources</div>
-      <div class="resource-grid" id="filterable-resources">
-        <a class="resource-link pending" href="#" data-tags="first-meeting update-plan"><span>Curriculum Integration Guide</span><span class="pending-badge">Add link</span></a>
-        <a class="resource-link pending" href="#" data-tags="unit-mapping"><span>Unit Mapping Guide</span><span class="pending-badge">Add link</span></a>
-        <a class="resource-link pending" href="#" data-tags="first-meeting unit-mapping"><span>Unit Maps for All Prisms Courses</span><span class="pending-badge">Add link</span></a>
-        <a class="resource-link pending" href="#" data-tags="first-meeting"><span>National Curriculum Alignment Guides</span><span class="pending-badge">Add link</span></a>
-        <a class="resource-link pending" href="#" data-tags="examples update-plan"><span>Sample Completed Unit Maps</span><span class="pending-badge">Add link</span></a>
-        <a class="resource-link pending" href="#" data-tags="update-plan unit-mapping"><span>District Unit Map Template</span><span class="pending-badge">Add link</span></a>
-        <a class="resource-link pending" href="#" data-tags="unit-mapping"><span>Teacher Dashboard / Scheduler</span><span class="pending-badge">Add link</span></a>
+      <div class="resource-grid">
+        <a class="resource-link pending" href="#"><span>Curriculum Integration Guide</span><span class="pending-badge">Add link</span></a>
+        <a class="resource-link pending" href="#"><span>Unit Mapping Guide</span><span class="pending-badge">Add link</span></a>
+        <a class="resource-link pending" href="#"><span>Unit Maps for All Prisms Courses</span><span class="pending-badge">Add link</span></a>
+        <a class="resource-link pending" href="#"><span>National Curriculum Alignment Guides</span><span class="pending-badge">Add link</span></a>
+        <a class="resource-link pending" href="#"><span>Sample Completed Unit Maps</span><span class="pending-badge">Add link</span></a>
+        <a class="resource-link pending" href="#"><span>District Unit Map Template</span><span class="pending-badge">Add link</span></a>
+        <a class="resource-link pending" href="#"><span>Teacher Dashboard / Scheduler</span><span class="pending-badge">Add link</span></a>
       </div>
     </div>
   </section>
@@ -134,44 +118,6 @@
 
   <footer class="site-footer">Prisms Coach Hub · Internal · Last updated July 2026</footer>
 
-  <script>
-    (function () {
-      var pills = document.querySelectorAll('.task-filter-pill');
-      var items = document.querySelectorAll('#filterable-resources .resource-link');
-      var activeLabel = document.getElementById('task-filter-active');
-      var labels = {
-        'first-meeting': 'meeting with a district for the first time',
-        'unit-mapping': 'preparing for Teacher Institute unit mapping',
-        'update-plan': 'updating a curriculum integration plan',
-        'examples': 'completed examples'
-      };
-      function showAll() {
-        items.forEach(function (item) { item.style.display = ''; });
-        activeLabel.style.display = 'none';
-      }
-      pills.forEach(function (pill) {
-        pill.addEventListener('click', function () {
-          var tag = pill.dataset.tag;
-          var wasActive = pill.classList.contains('active');
-          pills.forEach(function (p) { p.classList.remove('active'); });
-          if (wasActive) { showAll(); return; }
-          pill.classList.add('active');
-          items.forEach(function (item) {
-            var tags = (item.dataset.tags || '').split(' ');
-            item.style.display = tags.indexOf(tag) !== -1 ? '' : 'none';
-          });
-          activeLabel.style.display = '';
-          activeLabel.innerHTML = 'Showing resources for ' + labels[tag] + ' — <a href="#" id="clear-filter">Clear</a>';
-          document.getElementById('clear-filter').addEventListener('click', function (e) {
-            e.preventDefault();
-            pills.forEach(function (p) { p.classList.remove('active'); });
-            showAll();
-          });
-          document.getElementById('most-used-resources').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-      });
-    })();
-  </script>
   <script src="assets/search-index.js"></script>
   <script src="assets/search.js"></script>
   <script src="assets/nav.js?v=2"></script>
