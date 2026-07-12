@@ -39,5 +39,5 @@ var SEARCH_INDEX = [
 
   // Coach Central
   { label: 'Coach Team Meeting Notes & Recordings', url: 'coach-hq.html#meetings', context: 'Coach Central', external: false },
-  { label: 'Coach Culture & Values', url: 'coach-hq.html#culture', context: 'Coach Central', external: false }
+  { label: 'Prisms Coaching Standards', url: 'coach-hq.html#standards', context: 'Coach Central', external: false }
 ];
