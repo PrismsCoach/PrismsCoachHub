@@ -162,6 +162,15 @@ ul { list-style: none; }
    have — keeps the daily tools visually anchored to the warm hero above
    them instead of the page feeling like it starts over twice. */
 .home-toolkit { margin-top: -34px; padding: 0 24px 8px; }
+/* White surface instead of the default gradient tool-card — on top of the
+   gradient hero, a gradient card reads as one continuous colored block with
+   no visible boundary. White gives it the same separation phase-cards used
+   to have here. */
+.home-toolkit .tool-card { background: white; color: var(--gray-900); box-shadow: 0 8px 24px rgba(53,60,120,0.14); }
+.home-toolkit .tool-card-title { color: var(--navy); }
+.home-toolkit .tool-card-desc { color: var(--gray-600); }
+.home-toolkit .tool-card-btn { background: var(--pink); color: white; box-shadow: none; }
+.home-toolkit .tool-card-btn:hover { opacity: 0.9; }
 
 /* ─── Cycle grid (Coaching page 4-step flow) ───────────── */
 .cycle-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
