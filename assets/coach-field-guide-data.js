@@ -24,21 +24,15 @@
 // ─────────────────────────────────────────────────────────────────────────
 
 // ─── Step 1 options: coaching day types ────────────────────────────────
-// Only these three show in the selector today. Skill Builder Day is fully
-// modeled below (routines + field guide) but intentionally left out of this
-// list per current scope — add it here (and nowhere else) when it's ready.
-//
 // `hasModel: false` means this day type doesn't have a Co-Teaching /
 // Teacher-Led distinction in real practice — step 2 is skipped entirely and
 // the field guide is looked up directly by day type (see FIELD_GUIDE below).
 var DAY_TYPES = [
   { id: 'tutorial', label: 'Tutorial Day', hint: "Students' first time in VR", hasModel: false },
   { id: 'content-module', label: 'Content Module Day', hint: 'A VR Content Module lesson', hasModel: true },
-  { id: 'transfer-assessment', label: 'Transfer / Assessment Day', hint: 'Transfer day activities, CFUs, revisions', hasModel: true }
+  { id: 'transfer-assessment', label: 'Transfer / Assessment Day', hint: 'Transfer day activities, CFUs, revisions', hasModel: true },
+  { id: 'skill-builder', label: 'Skill Builder Day', hint: 'Spaced retrieval practice', hasModel: true }
 ];
-
-// Modeled and ready, not yet added to DAY_TYPES above (see comment there).
-var SKILL_BUILDER_DAY_TYPE = { id: 'skill-builder', label: 'Skill Builder Day', hint: 'Spaced retrieval practice', hasModel: true };
 
 // ─── Step 2 options: coaching model ────────────────────────────────────
 // Maps to the Coaching to Independence guide's Round 1 / Round 2 framing.

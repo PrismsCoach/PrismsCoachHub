@@ -108,7 +108,7 @@
   }
 
   var DAY_TYPE_LOOKUP = {};
-  DAY_TYPES.concat([SKILL_BUILDER_DAY_TYPE]).forEach(function (dt) { DAY_TYPE_LOOKUP[dt.id] = dt; });
+  DAY_TYPES.forEach(function (dt) { DAY_TYPE_LOOKUP[dt.id] = dt; });
   var MODEL_LOOKUP = {};
   COACHING_MODELS.forEach(function (m) { MODEL_LOOKUP[m.id] = m; });
 

@@ -203,8 +203,7 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
 }
 .resource-link:hover { border-color: var(--pink); background: var(--pink-light); }
 .resource-link .arrow { color: var(--pink); font-size: 14px; flex-shrink: 0; }
-.resource-link.pending { border-style: dashed; border-color: var(--gray-300); color: var(--gray-400); }
-.resource-link.pending:hover { border-color: var(--coral); background: var(--coral-light); color: var(--coral-dark); }
+.resource-link.pending { border-style: dashed; border-color: var(--gray-300); color: var(--gray-400); cursor: default; }
 .pending-badge {
   font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px;
   background: var(--coral-light); color: var(--coral-dark); padding: 2px 6px; border-radius: 4px; flex-shrink: 0;
@@ -321,7 +320,7 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
 .fg-step:last-child { margin-bottom: 0; }
 .fg-step-label { font-size: 13.5px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
 
-.fg-daytype-grid, .fg-model-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.fg-daytype-grid, .fg-model-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 .fg-model-grid { grid-template-columns: repeat(2, 1fr); max-width: 480px; }
 
 .fg-daytype-btn, .fg-model-btn {
@@ -455,6 +454,8 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
 }
 @media (max-width: 560px) {
   .cycle-grid { grid-template-columns: 1fr; }
+  .tool-card.tool-compact { width: 100%; flex: 1 1 100%; }
+  .tool-card.tool-compact .tool-card-title { white-space: normal; }
 }
 @media (max-width: 760px) {
   .nav-toggle { display: block; }
