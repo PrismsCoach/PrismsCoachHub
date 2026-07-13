@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prisms Coach Hub · Coaching</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/styles.css?v=13" />
+  <link rel="stylesheet" href="assets/styles.css?v=14" />
 </head>
 <body>
 
@@ -70,8 +70,63 @@
     </div>
   </section>
 
-  <section class="section" style="padding-top: 0;">
+  <section class="section" id="prepare" style="padding-top: 0;">
     <div class="section-inner">
+      <div class="section-title">1 · Prepare</div>
+      <div class="section-desc">Set a focus before you walk in.</div>
+      <div class="card">
+        <div class="checklist">
+          <div class="checklist-step"><div class="checklist-num">1</div><div class="checklist-text">Review Teacher Dashboard data</div></div>
+          <div class="checklist-step"><div class="checklist-num">2</div><div class="checklist-text">Review previous visit notes</div></div>
+          <div class="checklist-step"><div class="checklist-num">3</div><div class="checklist-text">Confirm the schedule and lesson for the visit</div></div>
+          <div class="checklist-step"><div class="checklist-num">4</div><div class="checklist-text">Complete lesson study or prep for the module</div></div>
+          <div class="checklist-step"><div class="checklist-num">5</div><div class="checklist-text">Send the teacher a preparation email</div></div>
+          <div class="checklist-step"><div class="checklist-num">6</div><div class="checklist-text">Confirm materials and technology readiness</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-coach" id="coach">
+    <div class="section-inner">
+      <div class="section-title">2 · Coach</div>
+      <div class="section-desc">The visit itself — open this before you walk into the school.</div>
+
+      <div class="tool-card" style="margin-bottom: 18px;">
+        <div>
+          <div class="tool-card-title">Live Coach Tool</div>
+          <div class="tool-card-desc">Rate routines green/yellow/red as the period unfolds, then generate a PDF summary or send straight into the email generator.</div>
+        </div>
+        <a class="tool-card-btn" href="https://prismscoach.github.io/PrismsEmailGenerator/live-coach-tool.html" target="_blank" rel="noopener">Open Tool ↗</a>
+      </div>
+
+      <div class="field-guide-card">
+        <div class="fg-step">
+          <div class="fg-step-label">1. What kind of coaching day is this?</div>
+          <div class="fg-daytype-grid" id="fg-daytype-grid" role="group" aria-label="Coaching day type"></div>
+        </div>
+        <div class="fg-step" id="fg-model-step" style="display: none;">
+          <div class="fg-step-label">2. How are you coaching today?</div>
+          <div class="fg-model-grid" id="fg-model-grid" role="group" aria-label="Coaching model"></div>
+        </div>
+        <div id="fg-result"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="log" style="padding-top: 0;">
+    <div class="section-inner">
+      <div class="section-title">3 · Log</div>
+      <div class="section-desc">Mark the visit complete so the PL team has visibility into every visit.</div>
+
+      <div class="tool-card" style="margin-bottom: 16px;">
+        <div>
+          <div class="tool-card-title">Service Tracker</div>
+          <div class="tool-card-desc">Mark the visit complete with a Notes entry — this is the one place the PL team can see what's happening in classrooms across every coach.</div>
+        </div>
+        <a class="tool-card-btn" href="https://service.prismsvr.com/" target="_blank" rel="noopener">Open Tracker ↗</a>
+      </div>
+
       <div class="card">
         <div class="card-tag">First Year Rollout</div>
         <div class="card-title">Logging Your Visit — Service Tracker Notes</div>
@@ -84,6 +139,21 @@
         <div class="callout" style="margin-top: 10px; border-left-color: var(--coral); background: var(--coral-light);">
           <strong>Used the Live Coach Tool?</strong> Paste your "What Went Well Today" / "Focus for Next Lesson" summary straight into the Notes field — no need to write it twice.
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="followup" style="padding-top: 0;">
+    <div class="section-inner">
+      <div class="section-title">4 · Follow Up</div>
+      <div class="section-desc">Close the loop with the teacher.</div>
+
+      <div class="tool-card">
+        <div>
+          <div class="tool-card-title">Post-Coaching Email Generator</div>
+          <div class="tool-card-desc">Turn visit notes into a warm, specific, well-structured coaching email in minutes — for both post-coaching visits and tutorial coaching.</div>
+        </div>
+        <a class="tool-card-btn" href="https://prismscoach.github.io/PrismsEmailGenerator" target="_blank" rel="noopener">Open Tool ↗</a>
       </div>
     </div>
   </section>
@@ -127,6 +197,8 @@
 
   <footer class="site-footer">Prisms Coach Hub · Internal · Last updated July 2026</footer>
 
+  <script src="assets/coach-field-guide-data.js?v=1"></script>
+  <script src="assets/coach-field-guide.js?v=1"></script>
   <script src="assets/search-index.js"></script>
   <script src="assets/search.js"></script>
   <script src="assets/nav.js?v=2"></script>
