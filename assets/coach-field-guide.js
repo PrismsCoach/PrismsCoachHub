@@ -94,8 +94,7 @@
     if (!items || !items.length) return '';
     return '<div class="fg-block"><div class="fg-label">What to Do If…</div><div class="fg-whatifs">' +
       items.map(function (w) {
-        return '<div class="fg-whatif"><strong>If ' + escapeHtml(w.if.replace(/^PLACEHOLDER:\s*/, '')) + '</strong> — ' +
-          escapeHtml(w.then.replace(/^PLACEHOLDER:\s*/, '')) + '</div>';
+        return '<div class="fg-whatif"><strong>If ' + escapeHtml(w.if) + '</strong> — ' + escapeHtml(w.then) + '</div>';
       }).join('') +
       '</div></div>';
   }
@@ -120,7 +119,7 @@
     html += '<div class="fg-result">';
     html += '<div class="fg-result-header"><div class="fg-result-title">Coach at a Glance</div><div class="fg-result-combo">' +
       escapeHtml(dayLabel) + ' · ' + escapeHtml(modelLabel) + '</div></div>';
-    html += '<div class="fg-block fg-goal"><div class="fg-label">Today\'s Goal</div><p>' + escapeHtml((content.goal || '').replace(/^PLACEHOLDER:\s*/, '')) + '</p></div>';
+    html += '<div class="fg-block fg-goal"><div class="fg-label">Today\'s Goal</div><p>' + escapeHtml(content.goal || '') + '</p></div>';
     html += listBlock('Coach Priorities', content.priorities);
     html += '<div class="fg-block"><div class="fg-label">Critical Routines</div>' + renderRoutines(state.dayType) + '</div>';
     html += listBlock('Coach Moves', content.coachMoves);
@@ -128,7 +127,7 @@
     html += listBlock('Common Challenges', content.challenges);
     html += whatIfBlock(content.whatIfs);
     html += listBlock('Success Indicators', content.successIndicators);
-    html += '<div class="fg-draft-note">Draft content — final guidance coming soon. Edit in assets/coach-field-guide-data.js.</div>';
+    html += '<div class="fg-draft-note">Synthesized from the routine docs &amp; Coaching to Independence guide — review against the source docs above before treating as final. Edit in assets/coach-field-guide-data.js.</div>';
     html += '</div>';
     resultEl.innerHTML = html;
     resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

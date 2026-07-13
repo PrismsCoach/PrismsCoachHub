@@ -5,10 +5,14 @@
 // rendering logic (that lives in coach-field-guide.js) — this file is pure
 // content, organized so each piece is easy to find and replace.
 //
-// EVERYTHING MARKED "PLACEHOLDER" is draft copy standing in for final
-// guidance and has not been reviewed/approved. Replace it before relying on
-// it with coaches. Routine `url` fields are all `null` (no real link exists
-// yet) — fill them in with real resource URLs as they become available.
+// SOURCED FROM: the Hardware & Technology, Just-in-Time Feedback, Writing &
+// Discourse, Assessment & Revision, and Skill Builder routine docs (26-27),
+// plus the Prisms Coaching to Independence implementation guide (2026) —
+// specifically its Round 1 (co-taught, coach establishes the vision) vs.
+// Round 2 (teacher-led, coach supports independence) framing, which maps
+// to Co-Teaching / Teacher-Led below. Content here is synthesized from
+// those docs, not copied verbatim — sanity-check it against the source
+// docs (linked in ROUTINES below) before treating it as final.
 // ─────────────────────────────────────────────────────────────────────────
 
 // ─── Step 1 options: coaching day types ────────────────────────────────
@@ -25,19 +29,21 @@ var DAY_TYPES = [
 var SKILL_BUILDER_DAY_TYPE = { id: 'skill-builder', label: 'Skill Builder Day', hint: 'Spaced retrieval practice' };
 
 // ─── Step 2 options: coaching model ────────────────────────────────────
+// Maps to the Coaching to Independence guide's Round 1 / Round 2 framing.
 var COACHING_MODELS = [
-  { id: 'co-teaching', label: 'Co-Teaching', hint: 'You and the teacher share the room' },
-  { id: 'teacher-led', label: 'Teacher-Led', hint: 'Teacher leads; you observe & support' }
+  { id: 'co-teaching', label: 'Co-Teaching', hint: 'Round 1 — you and the teacher co-facilitate' },
+  { id: 'teacher-led', label: 'Teacher-Led', hint: 'Round 2 — teacher leads; you support independence' }
 ];
 
 // ─── Routine definitions ───────────────────────────────────────────────
 // `url: null` means no real link exists yet — the UI shows a clearly
 // marked "Add link" placeholder instead of guessing at one.
 var ROUTINES = {
-  hardware:   { name: 'Hardware & Technology', url: null },
-  jitf:       { name: 'Just-in-Time Feedback', url: null },
-  writing:    { name: 'Writing & Discourse', url: null },
-  assessment: { name: 'Assessment & Revision', url: null },
+  hardware:   { name: 'Hardware & Technology', url: 'https://docs.google.com/document/d/131Kq3SoUH0xbrTfO9hX8bMVBVD7ZP8uYA0bbJdxx92w/view?tab=t.0' },
+  jitf:       { name: 'Just-in-Time Feedback', url: 'https://docs.google.com/document/d/1tD7wYrmV7Pap2vlmk4nphd-go509Y1AQCuWJXcAVtE8/view?tab=t.0' },
+  writing:    { name: 'Writing & Discourse', url: 'https://docs.google.com/document/d/1uUQKxixOcYQxydBR3wTAA7KQbcP831ja19Ctvu6minc/view?tab=t.0' },
+  assessment: { name: 'Assessment & Revision', url: 'https://docs.google.com/document/d/1z6AzlSlc2FFHdFNUWYLp7OaHxU5Nt2P7iaI_xrXs59g/view' },
+  // No doc link provided yet for Skill Builder routines — add it here once you have it.
   spaced:     { name: 'Spaced Repetition Practice', url: null }
 };
 
@@ -53,266 +59,278 @@ var DAY_ROUTINES = {
 };
 
 // ─── Coach at a Glance content, keyed "<dayType>__<model>" ─────────────
-// PLACEHOLDER copy throughout — concise stand-ins, not final guidance.
 // whatIfs entries are { if: 'scenario', then: 'response' } pairs.
 var FIELD_GUIDE = {
 
   'content-module__co-teaching': {
-    goal: 'PLACEHOLDER: Students move through VR, synthesis, and writing with the teacher owning as much of the routine as they\'re ready for.',
+    goal: 'Co-facilitate Just-in-Time Feedback and post-VR writing, discourse, and synthesis routines to establish what high-quality implementation looks like.',
     priorities: [
-      'PLACEHOLDER: Watch for where the teacher needs a model vs. where they\'ve got it',
-      'PLACEHOLDER: Keep the Teacher Dashboard open and visible to both of you',
-      'PLACEHOLDER: Protect time for synthesis and writing at the end of VR'
+      'Model the Teacher Dashboard and Just-in-Time Feedback moves in real time',
+      'Protect the Synthesis Activity and writing time before discussion starts',
+      'Show, don\'t just tell — establish a vision the teacher can run independently next time'
     ],
     coachMoves: [
-      'PLACEHOLDER: Model a routine once, then hand it back explicitly ("Your turn next time")',
-      'PLACEHOLDER: Circulate together during VR, dividing the room by proximity',
-      'PLACEHOLDER: Use a shared hand signal to swap who\'s leading mid-lesson',
-      'PLACEHOLDER: Narrate your own moves out loud so the teacher sees the reasoning, not just the action'
+      'Co-facilitate feedback in order: hints/peer support first, then individual conferencing (screencast, Teacher Talk Track, Socratic questions), then small/whole-group conferencing if a misconception is shared',
+      'Model providing the Synthesis Activity before VR ends, and monitoring the Dashboard to confirm students reach the Critical Task',
+      'Coach student writing side by side with the teacher — press for a claim, ask for evidence, prompt for reasoning',
+      'Facilitate discourse together: select 2-3 representative student responses and use discussion prompts ("Do you agree or disagree? Why?")'
     ],
     lookFors: [
-      'PLACEHOLDER: Headsets on and students in VR within the first few minutes',
-      'PLACEHOLDER: Teacher checking the Dashboard unprompted',
-      'PLACEHOLDER: Students writing before discussion starts'
+      'Teacher Dashboard open and monitored throughout VR',
+      'Hints and peer support tried before individual conferencing',
+      'Students write independently before any discussion begins',
+      'Teacher connects student thinking back to the lesson objective during consolidation'
     ],
     challenges: [
-      'PLACEHOLDER: Hardware setup eats into VR time',
-      'PLACEHOLDER: Teacher hangs back and waits for you to lead everything',
-      'PLACEHOLDER: Synthesis gets rushed or skipped when the period runs long'
+      'Individual conferencing happening before hints/peer support are tried',
+      'Synthesis Activity introduced too late, after most students have already left VR',
+      'Discussion starting before students have written anything down'
     ],
     whatIfs: [
-      { if: 'PLACEHOLDER: The teacher defers to you on every decision', then: 'PLACEHOLDER: Name it directly — ask them to make the next call and back them up' },
-      { if: 'PLACEHOLDER: A student is stuck in VR and no one has noticed', then: 'PLACEHOLDER: Step in yourself, then flag the miss to the teacher afterward, not during' }
+      { if: 'a student is stuck and hints/peer support haven\'t worked', then: 'move to individual conferencing — screencast and use the Teacher Talk Track or Socratic questions' },
+      { if: 'several students share the same misconception', then: 'pause for small or whole-group conferencing rather than repeating the same individual conference' }
     ],
     successIndicators: [
-      'PLACEHOLDER: Teacher took the lead on at least one routine without prompting',
-      'PLACEHOLDER: Synthesis and writing happened before the bell',
-      'PLACEHOLDER: You leave with one specific thing to hand off next visit'
+      'Teacher used the Dashboard to identify who needed support, unprompted',
+      'Writing happened before discussion, every time',
+      'Teacher can describe the difference between hints/peer support, individual conferencing, and group conferencing'
     ]
   },
 
   'content-module__teacher-led': {
-    goal: 'PLACEHOLDER: The teacher runs the full lesson; you observe closely and step in only when it genuinely matters.',
+    goal: 'Teacher leads Just-in-Time Feedback and post-VR writing, discourse, and synthesis; you direct only when needed and build their confidence toward independence.',
     priorities: [
-      'PLACEHOLDER: Stay out of the teacher\'s way unless a student is at real risk of disengaging',
-      'PLACEHOLDER: Track what you\'ll want to name in the debrief',
-      'PLACEHOLDER: Notice Dashboard use without taking over it yourself'
+      'Let the teacher choose the right level of feedback (hints → individual → group) before stepping in',
+      'Watch specifically for whether writing happens before discussion',
+      'Build independence — resist doing it for them'
     ],
     coachMoves: [
-      'PLACEHOLDER: Whisper-coach only — brief, quiet, in-the-moment prompts',
-      'PLACEHOLDER: Position yourself where you can see the whole room, not just one student',
-      'PLACEHOLDER: Jot specific moments (not vague impressions) for the follow-up email',
-      'PLACEHOLDER: Step in directly only if a student is stuck and the teacher hasn\'t noticed'
+      'Observe which Just-in-Time Feedback level the teacher reaches for and whether it matches what\'s actually happening',
+      'Step in only if a shared misconception goes unaddressed, or writing time is about to be skipped',
+      'Note specific moments of strong Dashboard use or discourse facilitation for the debrief',
+      'Whisper-coach sparingly — a quiet prompt, not a takeover'
     ],
     lookFors: [
-      'PLACEHOLDER: Teacher circulating and using the Dashboard independently',
-      'PLACEHOLDER: Clear expectations given before headsets go on',
-      'PLACEHOLDER: Writing time protected before discussion'
+      'Teacher tries hints/peer support before jumping to individual conferencing',
+      'Synthesis Activity assigned before VR time runs out',
+      'Teacher uses discussion prompts to press for reasoning, not just answers'
     ],
     challenges: [
-      'PLACEHOLDER: Urge to jump in too early instead of letting the teacher recover on their own',
-      'PLACEHOLDER: Hard to collect specific evidence while also staying invisible',
-      'PLACEHOLDER: Teacher misses a stuck student and the window to help closes fast'
+      'Teacher jumps straight to individual conferencing without trying hints/peer support first',
+      'Discourse becomes teacher-led telling instead of student discussion',
+      'Consolidation gets rushed or skipped at the end'
     ],
     whatIfs: [
-      { if: 'PLACEHOLDER: A student is visibly stuck and the teacher hasn\'t seen it', then: 'PLACEHOLDER: A quiet, direct nudge to the teacher beats fixing it yourself' },
-      { if: 'PLACEHOLDER: The lesson is going great and there\'s nothing to whisper-coach', then: 'PLACEHOLDER: Good — that\'s success. Spend the time gathering specific detail for the email' }
+      { if: 'the teacher misses a shared misconception affecting multiple students', then: 'a brief, direct nudge to pause for group conferencing — this is worth interrupting for' },
+      { if: 'writing time is about to be skipped', then: 'whisper-coach a reminder before discussion starts, rather than letting it go' }
     ],
     successIndicators: [
-      'PLACEHOLDER: You stepped in rarely, and only when it mattered',
-      'PLACEHOLDER: You leave with 2-3 specific, named moments for the debrief',
-      'PLACEHOLDER: The teacher ran the lesson without needing you to rescue it'
+      'Teacher independently matched the right feedback level to the situation',
+      'Writing preceded discussion without a prompt from you',
+      'You have specific evidence for the debrief, not general impressions'
     ]
   },
 
   'tutorial__co-teaching': {
-    goal: 'PLACEHOLDER: Get students and the teacher comfortable with headsets, the Dashboard, and classroom logistics for the first time.',
+    goal: 'Model hardware routines and set up 2-3 student tech helpers so the class can run its own tech logistics going forward.',
     priorities: [
-      'PLACEHOLDER: Hardware and hardware only — don\'t let content depth become the focus today',
-      'PLACEHOLDER: Model the distribution/collection routine once, then hand it to students',
-      'PLACEHOLDER: Make sure the teacher leaves knowing how to open the Dashboard alone'
+      'Model the full hardware routine start to finish',
+      'Set up tech helpers with the 5 primary troubleshooting issues so students can support each other',
+      'Give all instructions before headsets go on, not after'
     ],
     coachMoves: [
-      'PLACEHOLDER: Narrate the headset fit/boundary-setting steps out loud as you demo them',
-      'PLACEHOLDER: Assign tech helpers together with the teacher, not for them',
-      'PLACEHOLDER: Show the Dashboard on your device first, then hand control to the teacher',
-      'PLACEHOLDER: Keep language simple — this is a first exposure, not a deep dive'
+      'Model preparing equipment (headsets powered off before charging, controllers matched to their headset)',
+      'Choose a distribution method with the teacher — pre-placed, grab-and-go, or tech helpers — and model it',
+      'Walk through headset setup together: strap fit, play boundary, and the VR Norms (Explore, Persist)',
+      'Identify and train 2-3 tech helpers on the 5 primary troubleshooting issues'
     ],
     lookFors: [
-      'PLACEHOLDER: Students can put on and adjust a headset with minimal help by the end',
-      'PLACEHOLDER: Teacher opens the Dashboard without being told how',
-      'PLACEHOLDER: Cleanup routine runs smoother the second time than the first'
+      'All instructions given before any headset goes on',
+      'Auto Launch used from the Teacher Dashboard where possible',
+      'Tech helpers actively distributing/collecting rather than the teacher doing it alone',
+      'Headsets sanitized and returned correctly at the end'
     ],
     challenges: [
-      'PLACEHOLDER: Headset fit issues eat up most of the period',
-      'PLACEHOLDER: Teacher feels like they need to "catch up" on content — redirect back to hardware',
-      'PLACEHOLDER: Too many first-day tech hiccups at once (charging, login, fit)'
+      'No tech helpers identified yet, so the teacher is doing all the logistics solo',
+      'Headset distribution or login taking up most of the period',
+      'Students unsure of VR Norms language (Explore / Persist) since it\'s their first exposure'
     ],
     whatIfs: [
-      { if: 'PLACEHOLDER: A student can\'t get a comfortable headset fit', then: 'PLACEHOLDER: Try the three standard fixes (lens adjustment, strap, brightness) before troubleshooting further' },
-      { if: 'PLACEHOLDER: The teacher wants to skip ahead to content today', then: 'PLACEHOLDER: Gently hold the line — a shaky hardware routine costs more time later than it saves today' }
+      { if: 'a student is hesitant to put the headset on', then: 'make the Frame conversation engaging, remind them breaks are OK, and offer a timer if it helps' },
+      { if: 'distribution is taking too long', then: 'pre-set headsets on desks before class next time, or lean more on tech helpers' }
     ],
     successIndicators: [
-      'PLACEHOLDER: Every student got a working headset on and could navigate basic controls',
-      'PLACEHOLDER: Teacher can run the Dashboard solo next time',
-      'PLACEHOLDER: No major tech logistics problem is left unresolved for next visit'
+      '2-3 tech helpers are identified and know the 5 primary troubleshooting issues',
+      'Teacher can run Auto Launch from the Dashboard independently',
+      'The hardware routine start-to-finish took less time than at the start of the visit'
     ]
   },
 
   'tutorial__teacher-led': {
-    goal: 'PLACEHOLDER: The teacher runs the first VR experience themselves; you\'re there as a safety net for hardware issues only.',
+    goal: 'Teacher runs the hardware routine independently; you observe and support only for genuine tech issues.',
     priorities: [
-      'PLACEHOLDER: Let the teacher lead distribution and setup even if it\'s slower than you\'d do it',
-      'PLACEHOLDER: Step in for hardware failures, not pacing or content choices',
-      'PLACEHOLDER: Notice what the teacher will need modeled next visit'
+      'Let the teacher lead distribution, setup, and cleanup even if it\'s slower',
+      'Step in for real hardware failures, not normal first-time pacing',
+      'Confirm tech helpers know the 5 primary troubleshooting issues'
     ],
     coachMoves: [
-      'PLACEHOLDER: Whisper-coach hardware fixes only — let everything else play out',
-      'PLACEHOLDER: Stay near the charging cart/tech station in case of an issue',
-      'PLACEHOLDER: Resist narrating what you\'d do differently in the moment'
+      'Observe whether instructions are given before headsets go on',
+      'Note whether tech helpers are being used and how confidently',
+      'Step in directly only for a genuine hardware failure (won\'t power on, login broken, etc.)',
+      'Save pacing or sequencing feedback for the debrief rather than interrupting'
     ],
     lookFors: [
-      'PLACEHOLDER: Teacher gives clear instructions before headsets go on',
-      'PLACEHOLDER: Tech helpers are being used, even informally',
-      'PLACEHOLDER: Teacher attempts the Dashboard without prompting'
+      'Teacher gives all instructions before headsets go on',
+      'Tech helpers handle distribution/collection with minimal teacher involvement',
+      'Sanitizing and headset shutdown routine is followed at the end'
     ],
     challenges: [
-      'PLACEHOLDER: Slower first-time pacing that isn\'t actually a problem — resist the urge to speed it up',
-      'PLACEHOLDER: A hardware issue you could fix in seconds takes the teacher several minutes',
-      'PLACEHOLDER: Knowing when "struggling" becomes "stuck" and needs your help'
+      'Teacher hasn\'t set up tech helpers yet and is doing everything solo',
+      'A real hardware issue takes several minutes to resolve without your help',
+      'Confusing "still learning the routine" with an actual problem worth stepping in for'
     ],
     whatIfs: [
-      { if: 'PLACEHOLDER: A real hardware failure (dead battery, login issue) stalls the class', then: 'PLACEHOLDER: Step in immediately — this one\'s a logistics fix, not a teaching moment to protect' },
-      { if: 'PLACEHOLDER: Setup is just slow, not broken', then: 'PLACEHOLDER: Let it run — first-time pacing is expected and will improve' }
+      { if: 'a headset won\'t power on or a student is logged into the wrong account', then: 'step in immediately — this is a logistics fix, not a moment to protect' },
+      { if: 'setup is just slower than you\'d do it yourself', then: 'let it run — first-time pacing is expected' }
     ],
     successIndicators: [
-      'PLACEHOLDER: Teacher completed the full tutorial routine with minimal coach intervention',
-      'PLACEHOLDER: You only stepped in for genuine hardware failures',
-      'PLACEHOLDER: Teacher and students both leave more comfortable with the hardware than they started'
+      'Teacher completed the full routine with tech helpers actively involved',
+      'You only stepped in for genuine hardware failures',
+      'Teacher and tech helpers both know the 5 primary troubleshooting issues by the end'
     ]
   },
 
   'transfer-assessment__co-teaching': {
-    goal: 'PLACEHOLDER: Students demonstrate and revise their thinking through a CFU or transfer task, with writing and discourse doing the heavy lifting.',
+    goal: 'Co-facilitate the CFU and revision routine to establish what a real revision cycle looks like.',
     priorities: [
-      'PLACEHOLDER: Protect a real revision window — don\'t let the CFU become a one-and-done check',
-      'PLACEHOLDER: Model how to use contrasting responses to drive discussion',
-      'PLACEHOLDER: Keep hardware/dashboard logistics off today\'s radar — they\'re not the focus'
+      'Model matching the revision pathway (procedural, conceptual, or written communication) to the actual misconception',
+      'Protect real revision time, not just a review',
+      'Confirm understanding before moving on — "revised" should mean more than "resubmitted"'
     ],
     coachMoves: [
-      'PLACEHOLDER: Co-facilitate the CFU review — you pull data, teacher leads discussion (or swap)',
-      'PLACEHOLDER: Model pulling two contrasting responses and asking "which is stronger, and why?"',
-      'PLACEHOLDER: Prompt for a silent-write step before any discussion starts',
-      'PLACEHOLDER: Hand the revision protocol to the teacher partway through'
+      'Co-review AI feedback with the teacher and sort responses into Ready to move on / Nearly there / Needs review',
+      'Model selecting the right revision pathway: procedural (redo on paper, Skill Builder if it\'s a prerequisite gap), conceptual (conference briefly, revisit the Synthesis Activity), or written communication (use the sentence frame in Writing Guidance)',
+      'Ask the pathway-specific diagnostic questions together — "What is the question asking?" or "What evidence supports your thinking?"',
+      'Confirm students can explain what changed before retaking the CFU'
     ],
     lookFors: [
-      'PLACEHOLDER: Students write independently before any discussion begins',
-      'PLACEHOLDER: CFU results get reviewed with time left to act on them',
-      'PLACEHOLDER: Revision is visible and specific, not just "try again"'
+      'Revision pathway matches the actual type of error, not a one-size-fits-all "try again"',
+      'Students retake the CFU after revising, not just review the answer',
+      'Teacher confirms understanding before moving on'
     ],
     challenges: [
-      'PLACEHOLDER: CFU review gets pushed to the end and there\'s no time left to revise',
-      'PLACEHOLDER: Discussion happens before anyone has written anything down',
-      'PLACEHOLDER: Only a few voices dominate the whole-class discussion'
+      'Every student gets the same revision approach regardless of error type',
+      'Revision becomes "look at the answer again" instead of a real pathway',
+      'No time left to retake the CFU after revising'
     ],
     whatIfs: [
-      { if: 'PLACEHOLDER: Time is running out and the CFU hasn\'t been reviewed yet', then: 'PLACEHOLDER: Protect a shortened 5-minute review over skipping it entirely' },
-      { if: 'PLACEHOLDER: The same few students are doing all the talking', then: 'PLACEHOLDER: Use cold-call or partner-share to widen who\'s heard from' }
+      { if: 'time is short and revision is at risk of being skipped', then: 'protect a shortened version — even one pathway, fully done, beats a rushed pass at all three' },
+      { if: 'a student\'s error doesn\'t clearly match one pathway', then: 'model asking the diagnostic questions together to figure out which one actually fits' }
     ],
     successIndicators: [
-      'PLACEHOLDER: Every student revised something based on the CFU or discussion',
-      'PLACEHOLDER: Writing happened before talking, every time',
-      'PLACEHOLDER: Teacher ran at least one full revision cycle without your lead'
+      'Every student was routed to the pathway that matched their actual error',
+      'Students could explain what changed in their thinking',
+      'Teacher independently ran at least one full revision pathway by the end'
     ]
   },
 
   'transfer-assessment__teacher-led': {
-    goal: 'PLACEHOLDER: The teacher runs the assessment/transfer cycle solo; you watch for whether writing, discourse, and revision are all actually happening.',
+    goal: 'Teacher runs the CFU and revision cycle independently; you confirm the revision pathway actually matches the error.',
     priorities: [
-      'PLACEHOLDER: Track whether revision is real or just "check your answer again"',
-      'PLACEHOLDER: Notice if discussion is replacing writing instead of following it',
-      'PLACEHOLDER: Collect specific evidence for the debrief rather than general impressions'
+      'Watch whether the teacher distinguishes procedural, conceptual, and written-communication errors',
+      'Notice whether revision is genuine or just a resubmission',
+      'Collect specific evidence on what worked and what didn\'t for the debrief'
     ],
     coachMoves: [
-      'PLACEHOLDER: Whisper-coach only if writing time is about to get skipped entirely',
-      'PLACEHOLDER: Note which students haven\'t been heard from by the debrief',
-      'PLACEHOLDER: Hold specific language for the follow-up rather than commenting in the moment'
+      'Observe how the teacher sorts AI feedback results and assigns revision pathways',
+      'Whisper-coach only if revision time is about to be cut entirely',
+      'Note which pathway-specific diagnostic questions got used (or didn\'t) for the debrief'
     ],
     lookFors: [
-      'PLACEHOLDER: Teacher builds in a genuine silent-write step',
-      'PLACEHOLDER: CFU or transfer task results actually get looked at before class ends',
-      'PLACEHOLDER: Revision is specific to the misconception, not just "redo it"'
+      'Different error types get routed to different revision pathways',
+      'Students explain what changed before retaking the CFU',
+      'Teacher confirms understanding rather than assuming it from a resubmission'
     ],
     challenges: [
-      'PLACEHOLDER: Assessment turns into a compliance check instead of a thinking task',
-      'PLACEHOLDER: Revision step gets cut when time runs short',
-      'PLACEHOLDER: Hard to know when to step in vs. let a flat discussion play out'
+      'All errors treated the same way regardless of type',
+      'Revision skipped or rushed when time runs short',
+      'Retaking the CFU happens without students first explaining their change in thinking'
     ],
     whatIfs: [
-      { if: 'PLACEHOLDER: Class is about to end with zero time for revision', then: 'PLACEHOLDER: A quiet prompt to the teacher to protect even 2 minutes beats none' },
-      { if: 'PLACEHOLDER: Discussion has gone flat and no one is building on ideas', then: 'PLACEHOLDER: Note it for the debrief rather than jumping in to rescue it yourself' }
+      { if: 'the teacher is about to skip revision for time', then: 'a quiet prompt to protect even a shortened version beats skipping it entirely' },
+      { if: 'revision pathway doesn\'t match the error type', then: 'flag it for the debrief rather than correcting it live' }
     ],
     successIndicators: [
-      'PLACEHOLDER: A real revision cycle happened, not just a review',
-      'PLACEHOLDER: You have specific, nameable moments for the follow-up email',
-      'PLACEHOLDER: Teacher independently protected writing time before discussion'
+      'Revision pathways matched actual error types without your prompting',
+      'Students retook the CFU after genuinely revising, not just resubmitting',
+      'You have specific, nameable evidence for the follow-up email'
     ]
   },
 
   // Modeled ahead of time for when Skill Builder Day is added to the selector.
   'skill-builder__co-teaching': {
-    goal: 'PLACEHOLDER: Use Skill Builders as spaced practice tied to a specific, data-identified gap — not a one-off assignment.',
+    goal: 'Co-select and launch a targeted Skill Builder tied to a specific prerequisite, reinforcement, or fluency goal.',
     priorities: [
-      'PLACEHOLDER: Confirm the specific skill gap driving today\'s Skill Builder before starting',
-      'PLACEHOLDER: Model how to connect the practice back to an upcoming module',
-      'PLACEHOLDER: Plan the next spaced reassignment before you leave'
+      'Confirm the specific learning goal (prerequisite, reinforcement, or fluency) before choosing a Skill Builder',
+      'Model auto-launching students to the right problem type from the Dashboard',
+      'Choose the grouping format (small group, whole class, differentiated, station rotation) that matches the goal'
     ],
     coachMoves: [
-      'PLACEHOLDER: Co-review CFU/prerequisite data together to confirm the target skill',
-      'PLACEHOLDER: Model a quick retrieval-practice warm-up routine',
-      'PLACEHOLDER: Hand the scheduling of the next reassignment to the teacher'
+      'Co-identify the learning goal and select the matching Skill Builder and 3-5 targeted questions together',
+      'Model auto-launching students from the Teacher Dashboard to the selected problem type',
+      'Circulate together, using the Dashboard to spot misconceptions in real time',
+      'Model the paper-based Synthesis Activity or Practice Activity to extend the learning afterward'
     ],
     lookFors: [
-      'PLACEHOLDER: The assigned Skill Builder maps to an identified gap, not a default pick',
-      'PLACEHOLDER: Teacher can explain why this skill, right now',
-      'PLACEHOLDER: A specific reassignment date gets set before the visit ends'
+      'The Skill Builder and questions chosen clearly match a specific goal, not a default pick',
+      'Grouping format matches the goal (e.g., small group for reteaching, whole class for shared practice)',
+      'Dashboard is actively monitored during the activity, not just at the start'
     ],
     challenges: [
-      'PLACEHOLDER: Skill Builder gets treated as a one-time assignment with no follow-up',
-      'PLACEHOLDER: No clear data tie to the specific gap being targeted'
+      'Skill Builder assigned without a clear learning goal behind it',
+      'Grouping format doesn\'t match the actual goal (e.g., whole class for a need that\'s really individual)',
+      'No follow-up plan for revisiting the skill later'
     ],
     whatIfs: [
-      { if: 'PLACEHOLDER: There\'s no clear data pointing to a specific gap', then: 'PLACEHOLDER: Pull it together before assigning — a targeted Skill Builder beats a generic one' }
+      { if: 'there\'s no clear data pointing to a specific goal', then: 'pull CFU or prerequisite data together before choosing — a targeted pick beats a generic one' },
+      { if: 'the whole class doesn\'t need the same thing', then: 'model switching to differentiated practice or station rotation instead' }
     ],
     successIndicators: [
-      'PLACEHOLDER: A specific skill gap was named and targeted',
-      'PLACEHOLDER: A spaced reassignment is scheduled, not just hoped for'
+      'A specific learning goal drove the Skill Builder choice',
+      'Grouping format matched the goal',
+      'A next spaced-practice opportunity is already being planned'
     ]
   },
   'skill-builder__teacher-led': {
-    goal: 'PLACEHOLDER: Teacher runs Skill Builder practice independently; you confirm it\'s targeted and spaced rather than generic.',
+    goal: 'Teacher runs Skill Builder practice independently; you confirm it\'s targeted rather than a generic assignment.',
     priorities: [
-      'PLACEHOLDER: Observe whether the practice ties to real data',
-      'PLACEHOLDER: Notice whether this is a one-off or part of a spaced plan'
+      'Notice whether the teacher can name the specific goal behind today\'s pick',
+      'Observe whether grouping format matches the goal',
+      'Save process feedback for the debrief'
     ],
     coachMoves: [
-      'PLACEHOLDER: Ask about the data behind today\'s pick, briefly, without taking over',
-      'PLACEHOLDER: Save any process feedback for the debrief'
+      'Ask briefly about the data behind today\'s Skill Builder choice, without taking over',
+      'Observe whether the Dashboard is used to monitor progress during the activity',
+      'Note whether a next spaced-practice opportunity is already planned'
     ],
     lookFors: [
-      'PLACEHOLDER: Teacher references specific data when explaining the choice',
-      'PLACEHOLDER: A next reassignment already exists on the calendar'
+      'Teacher references specific data (CFU results, prerequisite gaps) when explaining the choice',
+      'Grouping format (small group / whole class / differentiated / station rotation) matches the actual need',
+      'A next reassignment or check-in is already on the calendar'
     ],
     challenges: [
-      'PLACEHOLDER: Skill Builder chosen without a clear rationale',
-      'PLACEHOLDER: No spaced follow-up planned'
+      'Skill Builder chosen without a clear rationale',
+      'Same grouping format used regardless of the actual goal',
+      'No spaced follow-up planned'
     ],
     whatIfs: [
-      { if: 'PLACEHOLDER: The teacher can\'t articulate why this skill was chosen', then: 'PLACEHOLDER: Flag it for the debrief rather than interrupting the lesson' }
+      { if: 'the teacher can\'t articulate why this Skill Builder was chosen today', then: 'flag it for the debrief rather than interrupting the lesson' },
+      { if: 'grouping clearly doesn\'t match the need', then: 'note it for the debrief as a concrete next-visit conversation' }
     ],
     successIndicators: [
-      'PLACEHOLDER: Clear data-to-practice connection, explained by the teacher',
-      'PLACEHOLDER: A spaced follow-up is already planned'
+      'Clear data-to-practice connection, explained by the teacher',
+      'Grouping format matched the actual goal',
+      'A spaced follow-up is already planned'
     ]
   }
 };
