@@ -190,6 +190,8 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
 }
 .checklist-text { font-size: 13.5px; color: var(--gray-700); line-height: 1.55; }
 .checklist-time { font-size: 11.5px; color: var(--gray-400); font-style: italic; }
+.checklist-step-soon .checklist-num { background: var(--gray-100); color: var(--gray-400); }
+.checklist-step-soon .checklist-text { color: var(--gray-400); font-style: italic; }
 
 /* ─── Resource links ───────────────────────────────────── */
 .resource-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
@@ -297,8 +299,21 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
   padding: 11px 20px; border-radius: 8px; white-space: nowrap;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   transition: opacity 0.15s;
+  width: 140px; text-align: center; flex-shrink: 0;
 }
 .tool-card-btn:hover { opacity: 0.9; }
+
+/* Compact tool-card: title + button inline, sized to content rather than full width — used
+   when a section's title/description sit beside it instead of above it. */
+.tool-card.tool-compact { flex: 0 0 auto; width: auto; padding: 14px 20px; gap: 16px; }
+.tool-card.tool-compact .tool-card-title { margin-bottom: 0; font-size: 15px; white-space: nowrap; }
+
+/* Puts a section's title/description on the left and its tool-card on the right,
+   inline, instead of stacked — cuts vertical space considerably. */
+.section-tool-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+.section-tool-info { flex: 1; min-width: 220px; }
+.section-tool-info .section-title { margin-bottom: 3px; }
+.section-tool-info .section-desc { margin-bottom: 0; }
 
 /* ─── Coach at a Glance (Coaching page) ─────────────────── */
 .field-guide-card { background: white; border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px 26px; }

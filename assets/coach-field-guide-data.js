@@ -32,9 +32,9 @@
 // Teacher-Led distinction in real practice — step 2 is skipped entirely and
 // the field guide is looked up directly by day type (see FIELD_GUIDE below).
 var DAY_TYPES = [
-  { id: 'content-module', label: 'Content Module Day', hint: 'A VR content module lesson', hasModel: true },
   { id: 'tutorial', label: 'Tutorial Day', hint: "Students' first time in VR", hasModel: false },
-  { id: 'transfer-assessment', label: 'Transfer / Assessment Day', hint: 'CFU, revision, or transfer task', hasModel: true }
+  { id: 'content-module', label: 'Content Module Day', hint: 'A VR Content Module lesson', hasModel: true },
+  { id: 'transfer-assessment', label: 'Transfer / Assessment Day', hint: 'Transfer day activities, CFUs, revisions', hasModel: true }
 ];
 
 // Modeled and ready, not yet added to DAY_TYPES above (see comment there).
