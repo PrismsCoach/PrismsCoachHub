@@ -38,11 +38,19 @@
   }
 
   // ─── Step 1: day type ───────────────────────────────────────────────
+  // Day types with hasModel: false (e.g. Tutorial Day) skip step 2 entirely
+  // — there's no real Co-Teaching / Teacher-Led distinction for them.
   DAY_TYPES.forEach(function (dt) {
     var btn = makeToggleButton(dt.id, dt.label, dt.hint, 'fg-daytype-btn', function (id, btnEl) {
       selectInGroup(dayGrid, btnEl);
       state.dayType = id;
-      modelStep.style.display = '';
+      if (dt.hasModel === false) {
+        state.model = null;
+        selectInGroup(modelGrid, null);
+        modelStep.style.display = 'none';
+      } else {
+        modelStep.style.display = '';
+      }
       renderResult();
     });
     dayGrid.appendChild(btn);
@@ -105,20 +113,24 @@
   COACHING_MODELS.forEach(function (m) { MODEL_LOOKUP[m.id] = m; });
 
   function renderResult() {
-    if (!state.dayType || !state.model) { resultEl.innerHTML = ''; return; }
-    var key = state.dayType + '__' + state.model;
+    if (!state.dayType) { resultEl.innerHTML = ''; return; }
+    var dayDef = DAY_TYPE_LOOKUP[state.dayType];
+    var needsModel = !dayDef || dayDef.hasModel !== false;
+    if (needsModel && !state.model) { resultEl.innerHTML = ''; return; }
+
+    var key = needsModel ? (state.dayType + '__' + state.model) : state.dayType;
     var content = FIELD_GUIDE[key];
     if (!content) {
       resultEl.innerHTML = '<div class="fg-empty">No field guide content yet for this combination.</div>';
       return;
     }
-    var dayLabel = (DAY_TYPE_LOOKUP[state.dayType] || {}).label || state.dayType;
-    var modelLabel = (MODEL_LOOKUP[state.model] || {}).label || state.model;
+    var dayLabel = (dayDef || {}).label || state.dayType;
+    var modelLabel = needsModel ? ((MODEL_LOOKUP[state.model] || {}).label || state.model) : null;
 
     var html = '';
     html += '<div class="fg-result">';
     html += '<div class="fg-result-header"><div class="fg-result-title">Coach at a Glance</div><div class="fg-result-combo">' +
-      escapeHtml(dayLabel) + ' · ' + escapeHtml(modelLabel) + '</div></div>';
+      escapeHtml(dayLabel) + (modelLabel ? ' · ' + escapeHtml(modelLabel) : '') + '</div></div>';
     html += '<div class="fg-block fg-goal"><div class="fg-label">Today\'s Goal</div><p>' + escapeHtml(content.goal || '') + '</p></div>';
     html += listBlock('Coach Priorities', content.priorities);
     html += '<div class="fg-block"><div class="fg-label">Critical Routines</div>' + renderRoutines(state.dayType) + '</div>';
