@@ -200,6 +200,14 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
 .card-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; margin-bottom: 12px; }
 .card-body { font-size: 13.5px; color: var(--gray-700); line-height: 1.7; }
 .card-body p + p { margin-top: 10px; }
+
+/* Prepare is real but not what most visits open this page for — collapsed by
+   default so Coach is reachable without a scroll, same disclosure pattern as
+   the Culture values on Coach Central. */
+.prepare-summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.prepare-summary::-webkit-details-marker { display: none; }
+.prepare-chevron { color: var(--gray-400); font-size: 14px; transition: transform 0.15s; flex-shrink: 0; }
+.prepare-card[open] .prepare-chevron { transform: rotate(180deg); }
 .card-tag {
   display: inline-block;
   font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
