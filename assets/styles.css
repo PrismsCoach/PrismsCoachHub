@@ -207,6 +207,7 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
   padding: 3px 9px; border-radius: 5px; margin-bottom: 10px;
 }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; }
 
 .card.compact { padding: 16px 18px; margin-bottom: 0; }
 .card.compact .card-tag { margin-bottom: 6px; }
@@ -476,6 +477,7 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
   .phase-grid { grid-template-columns: 1fr; }
   .cycle-grid { grid-template-columns: 1fr 1fr; }
   .two-col { grid-template-columns: 1fr; }
+  .three-col { grid-template-columns: 1fr; }
   .fg-daytype-grid { grid-template-columns: 1fr; }
   .fg-model-grid { grid-template-columns: 1fr; max-width: none; }
 }
