@@ -32,7 +32,7 @@ var SEARCH_INDEX = [
 
   // Coaching resources
   { label: 'Prisms Core Routines', url: 'coaching.html', context: 'Coaching', external: false },
-  { label: 'Coaching Look-Fors / Rubric', url: 'coaching.html', context: 'Coaching', external: false },
+  { label: 'Prisms Lesson Look-Fors', url: 'coaching.html', context: 'Coaching', external: false },
   { label: 'Teacher Dashboard', url: 'coaching.html', context: 'Coaching', external: false },
   { label: 'Support: support@prismsvr.com', url: 'mailto:support@prismsvr.com', context: 'Support', external: true },
 
