@@ -244,18 +244,6 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
 .quote-banner { background: linear-gradient(135deg, var(--pink) 0%, var(--coral) 100%); border-radius: 12px; padding: 16px 22px; color: white; font-size: 14px; font-style: italic; line-height: 1.6; margin-bottom: 20px; display: flex; align-items: flex-start; gap: 8px; box-shadow: 0 6px 18px rgba(219,24,115,0.22); }
 .quote-mark { font-size: 30px; font-weight: 700; line-height: 0.5; font-style: normal; opacity: 0.75; flex-shrink: 0; }
 
-/* ─── Philosophy / callout block ──────────────────────── */
-.callout {
-  background: var(--navy-light);
-  border-left: 4px solid var(--navy);
-  border-radius: 8px;
-  padding: 16px 20px;
-  font-size: 13.5px;
-  color: var(--gray-700);
-  line-height: 1.65;
-}
-.callout strong { color: var(--navy); }
-
 /* ─── Coach / Culture side-by-side panels ─────────────── */
 .coach-panel { background: var(--navy-light); position: relative; overflow: hidden; }
 .coach-panel .card-title { color: var(--navy-dark); }
