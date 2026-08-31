@@ -117,65 +117,38 @@ ul { list-style: none; }
 .section-coach { background: var(--navy-light); }
 .section-coach .section-title { font-size: 23px; }
 
-/* ─── Phase cards (home) ──────────────────────────────── */
-.phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: -34px; padding: 0 24px 8px; }
-.phase-card {
-  background: white;
-  border-radius: 14px;
-  padding: 24px 22px;
-  box-shadow: 0 8px 24px rgba(53,60,120,0.14);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+/* ─── How We Work (home identity cards) ─────────────────── */
+.identity-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.identity-card { background: white; border-radius: 12px; border-top: 4px solid var(--navy); padding: 20px 18px; box-shadow: var(--shadow); }
+.identity-card-title { font-size: 14.5px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 8px; }
+.identity-card-desc { font-size: 12.5px; color: var(--gray-600); line-height: 1.55; }
+
+/* ─── What Are You Working On (home action cards) ───────── */
+.action-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.action-card {
+  background: white; border-radius: 14px; border-top: 4px solid var(--pink);
+  padding: 22px 22px 20px; box-shadow: 0 6px 20px rgba(53,60,120,0.10);
+  display: flex; flex-direction: column; gap: 10px;
   transition: transform 0.15s, box-shadow 0.15s;
 }
-.phase-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(53,60,120,0.20); }
-.phase-num {
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  background: var(--navy-light);
-  color: var(--navy);
-  font-size: 12px; font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-}
-.phase-card-title { font-size: 16.5px; font-weight: 700; color: var(--navy); }
-.phase-card-desc { font-size: 13px; color: var(--gray-600); line-height: 1.55; flex: 1; }
-.phase-card-link { font-size: 12.5px; font-weight: 700; color: var(--pink); display: flex; align-items: center; gap: 4px; }
+.action-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(53,60,120,0.16); }
+.action-card-title { font-size: 17px; font-weight: 700; color: var(--navy); display: block; width: fit-content; }
+.action-card-title::after { content: ' →'; }
+a.action-card-title:hover { color: var(--pink); text-decoration: underline; }
+.action-card-desc { font-size: 13px; color: var(--gray-600); line-height: 1.55; flex: 1; }
+/* Not yet a real destination — same honest-placeholder convention as
+   resource-link.pending, adapted to the bigger action-card shape. */
+.action-card-pending { border-top-color: var(--gray-300); background: var(--gray-50); }
+.action-card-title-pending { font-size: 17px; font-weight: 700; color: var(--gray-400); font-style: italic; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 
-/* Compact phase cards (home "Coaching Year" strip) — orientation, not navigation,
-   so they carry a frequency tag instead of the full description. */
-.phase-grid-compact { margin-top: 0; padding: 0; }
-.phase-card-compact { padding: 16px 18px; gap: 8px; }
-.phase-card-top { display: flex; align-items: center; justify-content: space-between; }
-.phase-tag {
-  font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px;
-  color: var(--gray-600); background: var(--gray-100); padding: 3px 9px; border-radius: 999px;
-}
-.phase-tag-ongoing { color: var(--pink-dark); background: var(--pink-light); }
-.phase-card-compact .phase-card-title { font-size: 15px; }
-/* The ongoing phase needs to visually outweigh the two periodic ones, not just
-   carry a smaller tag — same idea as .section-coach weighting Coach above
-   Prepare/Log/Follow Up on the Coaching page. */
-.phase-card-ongoing { background: var(--pink-light); border: 1.5px solid var(--pink); }
-.phase-card-ongoing .phase-num { background: white; }
-
-/* ─── Coach Toolkit (home) ──────────────────────────────── */
-.toolkit-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
-@media (min-width: 560px) { .toolkit-grid { grid-template-columns: 1fr 1fr; } }
-.toolkit-grid .tool-card { height: 100%; }
-/* Overlaps the hero's bottom edge, same treatment the phase cards used to
-   have — keeps the daily tools visually anchored to the warm hero above
-   them instead of the page feeling like it starts over twice. */
-.home-toolkit { margin-top: -34px; padding: 0 24px 8px; }
-/* White surface instead of the default gradient tool-card — on top of the
-   gradient hero, a gradient card reads as one continuous colored block with
-   no visible boundary. White gives it the same separation phase-cards used
-   to have here. */
-.home-toolkit .tool-card { background: white; color: var(--gray-900); box-shadow: 0 8px 24px rgba(53,60,120,0.14); }
-.home-toolkit .tool-card-title { color: var(--navy); }
-.home-toolkit .tool-card-desc { color: var(--gray-600); }
-.home-toolkit .tool-card-btn { background: var(--pink); color: white; box-shadow: none; }
-.home-toolkit .tool-card-btn:hover { opacity: 0.9; }
+/* ─── Where Things Live (home reference list) ───────────── */
+.truth-list { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.truth-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; border-top: 1px solid var(--gray-100); flex-wrap: wrap; }
+.truth-row:first-child { border-top: none; }
+.truth-need { font-size: 13.5px; color: var(--gray-700); font-weight: 500; flex: 1; min-width: 220px; }
+.truth-where { font-size: 13px; font-weight: 700; display: flex; gap: 14px; flex-wrap: wrap; }
+.truth-where a { color: var(--pink); }
+.truth-where a:hover { text-decoration: underline; }
 
 /* ─── Cycle grid (Coaching page 4-step flow) ───────────── */
 .cycle-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -400,9 +373,6 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
 .fg-empty { font-size: 13px; color: var(--gray-400); font-style: italic; }
 .fg-draft-note { margin-top: 4px; font-size: 11px; color: var(--gray-300); font-style: italic; }
 
-/* ─── Frequently used resources strip (home) ──────────── */
-.strip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; }
-
 /* ─── Pull quote ───────────────────────────────────────── */
 .pull-quote {
   border-left: 4px solid var(--pink);
@@ -474,15 +444,18 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
 
 /* ─── Mobile ───────────────────────────────────────────── */
 @media (max-width: 860px) {
-  .phase-grid { grid-template-columns: 1fr; }
   .cycle-grid { grid-template-columns: 1fr 1fr; }
   .two-col { grid-template-columns: 1fr; }
   .three-col { grid-template-columns: 1fr; }
+  .identity-grid { grid-template-columns: 1fr 1fr; }
+  .action-grid { grid-template-columns: 1fr 1fr; }
   .fg-daytype-grid { grid-template-columns: 1fr; }
   .fg-model-grid { grid-template-columns: 1fr; max-width: none; }
 }
 @media (max-width: 560px) {
   .cycle-grid { grid-template-columns: 1fr; }
+  .identity-grid { grid-template-columns: 1fr; }
+  .action-grid { grid-template-columns: 1fr; }
   .tool-card.tool-compact { width: 100%; flex: 1 1 100%; }
   .tool-card.tool-compact .tool-card-title { white-space: normal; }
 }
