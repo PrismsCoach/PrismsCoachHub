@@ -14,16 +14,18 @@ One user type, two mental states:
 
 The PL manager is a secondary audience, served *through* the artifacts coaches produce (Service Tracker Notes, coaching emails), not through the Hub directly — that's a deliberate choice, not a gap.
 
-## The workflow spine
+## The Coach Operating Model
 
-**Prepare → Coach → Log → Follow Up**
+**I Know It → I Prep For It → I Move It → I Close the Loop**
 
-Every new feature should be legible as belonging to one of these four steps, or to Coach Central (team/culture). If it fits neither, reconsider whether it belongs on this site.
+This is the one framework used everywhere on the Hub — coaches should never encounter a second, differently-named version of this cycle. The homepage states it as the ongoing coach identity/expectation (How We Work); the Coaching page shows the same four phases applied to a single visit. Same words, two altitudes — that's intentional, not a duplication.
 
-- **Prepare** — review data, set a focus before a visit
-- **Coach** — the visit itself (Live Coach Tool + Coach at a Glance field guide)
-- **Log** — record it (Service Tracker)
-- **Follow Up** — close the loop with the teacher (Email Generator)
+- **I Know It** — know your teachers, champions, district goals, and what's coming next. On the Coaching page: previous visit notes, Teacher Dashboard data, the relevant unit map.
+- **I Prep For It** — arrive informed and ready. On the Coaching page: confirm the schedule/lesson, prep the module, send a pre-coaching email, confirm materials/tech.
+- **I Move It** — the actual coaching work (Live Coach Tool + Coach at a Glance field guide).
+- **I Close the Loop** — capture what happened (Coaching AAR in Service Tracker), then act on it (teacher follow-up, the right resource, a clear next step). Capture and act stay visually distinct even though they share one phase name.
+
+Every new feature should be legible as belonging to one of these four phases, or to Coach Central (team/culture). If it fits neither, reconsider whether it belongs on this site.
 
 The homepage follows the same logic at a smaller scale: tools/actions coaches use *today* always come before reference material.
 
@@ -52,7 +54,7 @@ The homepage follows the same logic at a smaller scale: tools/actions coaches us
 
 ## What should never change
 
-- The Prepare → Coach → Log → Follow Up spine.
+- The I Know It → I Prep For It → I Move It → I Close the Loop operating model — one framework, used identically everywhere it appears.
 - "Tools before reference material" ordering, on every page, always.
 - Plain HTML/CSS/JS, no build step — this is why iteration has been fast.
 - Brand palette restraint, especially keeping status colors meaningful rather than decorative.
@@ -66,16 +68,16 @@ The homepage follows the same logic at a smaller scale: tools/actions coaches us
 
 ## Where the design is strongest (protect this)
 
-The Coaching page's **Coach** section: a real decision tree (day type → model → tailored guidance), routines correctly weighted (primary vs. supporting), content grounded in real routine docs, and visual prominence that announces its own importance. This is the reference implementation for what "operational, not documentation" should feel like everywhere else.
+The Coaching page's **I Move It** section: a real decision tree (day type → model → tailored guidance), routines correctly weighted (primary vs. supporting), content grounded in real routine docs, and visual prominence that announces its own importance. This is the reference implementation for what "operational, not documentation" should feel like everywhere else.
 
 ## Strategic opportunities — becoming an operational platform, not a documentation site
 
 Right now the Hub has one genuinely operational moment (Coach at a Glance) surrounded by reference material. To shift the balance:
 
-- **Persistent visit context** — let the Coaching page know "you're coaching at [school] today" across Prepare/Coach/Log/Follow Up, so the four steps feel like one continuous task.
+- **Persistent visit context** — let the Coaching page know "you're coaching at [school] today" across I Know It/I Prep For It/I Move It/I Close the Loop, so the four phases feel like one continuous task.
 - **Spread the field-guide pattern** — anywhere a coach currently has to read-and-decide (Teacher Institute prep, Integration & Mapping's "what are you trying to do") is a candidate for the same tap-tap-see-guidance interaction.
 - **Surface real state, not just links** — "Where We Coach" is the only page showing live data today. Show coaches their own status (visits logged this week, gaps to fill) too.
-- **Close more tool-to-tool loops** — Live Coach Tool → Email Generator already works well; Log → the rest of the cycle is the next candidate.
+- **Close more tool-to-tool loops** — Live Coach Tool → Email Generator already works well; the Coaching AAR → the rest of the cycle is the next candidate.
 
 ## Roadmap
 
@@ -87,7 +89,7 @@ Right now the Hub has one genuinely operational moment (Coach at a Glance) surro
 - Evaluate whether Teacher Institute or Integration & Mapping want their own version of Coach at a Glance.
 
 ### V1.5 — Operational improvements
-- Lightweight persistent "today's visit" context across Prepare/Coach/Log/Follow Up.
+- Lightweight persistent "today's visit" context across I Know It/I Prep For It/I Move It/I Close the Loop.
 - A real cross-device story for Visit History (currently device-local only).
 - Extend the primary/supporting routine + tailored-guidance pattern to Skill Builder Day and any new day types.
 - Deeper Service Tracker integration, if/when it supports more than copy-paste.
