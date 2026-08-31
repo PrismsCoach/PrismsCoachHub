@@ -17,7 +17,6 @@ var SEARCH_INDEX = [
   // Implementation Planning resources
   { label: 'Curriculum Integration Guide', url: 'integration-mapping.html#most-used-resources', context: 'Implementation Planning', external: false },
   { label: 'Unit Maps for All Prisms Courses', url: 'integration-mapping.html#most-used-resources', context: 'Implementation Planning', external: false },
-  { label: 'Unit Mapping Guide', url: 'integration-mapping.html#most-used-resources', context: 'Implementation Planning', external: false },
   { label: 'National Curriculum Alignment Guides', url: 'integration-mapping.html#most-used-resources', context: 'Implementation Planning', external: false },
   { label: 'District Unit Map Template', url: 'integration-mapping.html#most-used-resources', context: 'Implementation Planning', external: false },
   { label: 'Teacher Dashboard / Scheduler', url: 'integration-mapping.html#most-used-resources', context: 'Implementation Planning', external: false },

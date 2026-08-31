@@ -136,10 +136,6 @@ ul { list-style: none; }
 .action-card-title::after { content: ' →'; }
 a.action-card-title:hover { color: var(--pink); text-decoration: underline; }
 .action-card-desc { font-size: 13px; color: var(--gray-600); line-height: 1.55; flex: 1; }
-/* Not yet a real destination — same honest-placeholder convention as
-   resource-link.pending, adapted to the bigger action-card shape. */
-.action-card-pending { border-top-color: var(--gray-300); background: var(--gray-50); }
-.action-card-title-pending { font-size: 17px; font-weight: 700; color: var(--gray-400); font-style: italic; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 
 /* ─── Every Week (home) — deliberately lighter than a real section: a
    muted label instead of .section-title, chips instead of a card+list,
