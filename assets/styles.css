@@ -140,11 +140,13 @@ a.action-card-title:hover { color: var(--pink); text-decoration: underline; }
 /* ─── Every Week (home) — deliberately lighter than a real section: a
    muted label instead of .section-title, chips instead of a card+list,
    so it never competes with How We Work / What Are You Working On. */
-.every-week-label { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-400); margin-bottom: 10px; }
+.every-week-card { background: var(--navy-light); border-radius: 12px; padding: 20px 24px; }
+.every-week-label { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--navy); margin-bottom: 10px; }
 .every-week-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
 .every-week-chip { font-size: 12.5px; font-weight: 500; color: var(--gray-700); background: white; border: 1px solid var(--gray-200); border-radius: 999px; padding: 6px 14px; line-height: 1.4; }
 .every-week-meeting { font-size: 12.5px; color: var(--gray-600); line-height: 1.5; border-left: 3px solid var(--navy); padding-left: 10px; }
 .every-week-meeting strong { color: var(--navy); }
+.every-week-highlight { display: inline-block; background: var(--pink); color: white; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; padding: 2px 8px; border-radius: 6px; margin-right: 6px; vertical-align: middle; }
 
 /* ─── Where Things Live (home reference list) ───────────── */
 .truth-list { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
