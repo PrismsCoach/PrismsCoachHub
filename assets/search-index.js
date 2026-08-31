@@ -13,6 +13,7 @@ var SEARCH_INDEX = [
   { label: 'Post-Coaching Email Generator', url: 'https://prismscoach.github.io/PrismsEmailGenerator', context: 'Coaching · Tool', external: true },
   { label: 'Service Tracker', url: 'https://service.prismsvr.com/', context: 'Coaching · Tool', external: true },
   { label: 'Read the Full Coach Handbook', url: 'https://docs.google.com/document/d/1s14TWryL_i0_1LQaXrnczQLfy0YZtUf19tMBjfs3yhU/edit?tab=t.0', context: 'Coach Central', external: true },
+  { label: 'Teacher Handbook', url: 'https://docs.google.com/document/d/19jdgKdDj_S9fFv0Rxkt-__A_RpCIqfJlPVO00XaneGg/edit?tab=t.0', context: 'Home · Coaching', external: true },
 
   // Implementation Planning resources
   { label: 'Curriculum Integration Guide', url: 'integration-mapping.html#most-used-resources', context: 'Implementation Planning', external: false },
