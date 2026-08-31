@@ -141,6 +141,15 @@ a.action-card-title:hover { color: var(--pink); text-decoration: underline; }
 .action-card-pending { border-top-color: var(--gray-300); background: var(--gray-50); }
 .action-card-title-pending { font-size: 17px; font-weight: 700; color: var(--gray-400); font-style: italic; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 
+/* ─── Every Week (home) — deliberately lighter than a real section: a
+   muted label instead of .section-title, chips instead of a card+list,
+   so it never competes with How We Work / What Are You Working On. */
+.every-week-label { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-400); margin-bottom: 10px; }
+.every-week-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.every-week-chip { font-size: 12.5px; font-weight: 500; color: var(--gray-700); background: white; border: 1px solid var(--gray-200); border-radius: 999px; padding: 6px 14px; line-height: 1.4; }
+.every-week-meeting { font-size: 12.5px; color: var(--gray-600); line-height: 1.5; border-left: 3px solid var(--navy); padding-left: 10px; }
+.every-week-meeting strong { color: var(--navy); }
+
 /* ─── Where Things Live (home reference list) ───────────── */
 .truth-list { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
 .truth-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; border-top: 1px solid var(--gray-100); flex-wrap: wrap; }
