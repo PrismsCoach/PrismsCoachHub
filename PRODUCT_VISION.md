@@ -4,7 +4,7 @@ This is the architectural north star for the Coach Hub. Read this before making 
 
 ## What this product is
 
-The Coach Hub is **operational infrastructure for a recurring daily workflow**, not a wiki or a documentation site. Its job is to make the coaching cycle fast and unambiguous — every coach, every day, every stage of the school year. Everything else on the site (Integration & Mapping, Teacher Institute, Coach Central) supports coaches at the *other* points in their year where that daily cycle isn't running yet.
+The Coach Hub is **operational infrastructure for a recurring daily workflow**, not a wiki or a documentation site. Its job is to make the coaching cycle fast and unambiguous — every coach, every day, every stage of the school year. Everything else on the site (Implementation Planning, Teacher Institute, Coach Central) supports coaches at the *other* points in their year where that daily cycle isn't running yet.
 
 ## Primary users
 
@@ -75,7 +75,7 @@ The Coaching page's **I Move It** section: a real decision tree (day type → mo
 Right now the Hub has one genuinely operational moment (Coach at a Glance) surrounded by reference material. To shift the balance:
 
 - **Persistent visit context** — let the Coaching page know "you're coaching at [school] today" across I Know It/I Prep For It/I Move It/I Close the Loop, so the four phases feel like one continuous task.
-- **Spread the field-guide pattern** — anywhere a coach currently has to read-and-decide (Teacher Institute prep, Integration & Mapping's "what are you trying to do") is a candidate for the same tap-tap-see-guidance interaction.
+- **Spread the field-guide pattern** — anywhere a coach currently has to read-and-decide (Teacher Institute prep, Implementation Planning's "what are you trying to do") is a candidate for the same tap-tap-see-guidance interaction.
 - **Surface real state, not just links** — "Where We Coach" is the only page showing live data today. Show coaches their own status (visits logged this week, gaps to fill) too.
 - **Close more tool-to-tool loops** — Live Coach Tool → Email Generator already works well; the Coaching AAR → the rest of the cycle is the next candidate.
 
@@ -86,7 +86,7 @@ Right now the Hub has one genuinely operational moment (Coach at a Glance) surro
 - Finish "New to Coaching?" steps 3 & 4.
 - Get the Skill Builder routine doc link; decide whether Skill Builder Day joins the Coach selector.
 - Resolve the Resources-vs-per-page-resources duplication.
-- Evaluate whether Teacher Institute or Integration & Mapping want their own version of Coach at a Glance.
+- Evaluate whether Teacher Institute or Implementation Planning want their own version of Coach at a Glance.
 
 ### V1.5 — Operational improvements
 - Lightweight persistent "today's visit" context across I Know It/I Prep For It/I Move It/I Close the Loop.
