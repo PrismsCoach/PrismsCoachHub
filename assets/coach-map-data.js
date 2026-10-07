@@ -65,7 +65,7 @@
     MD: { region: 'Mid Atlantic', people: [{ name: 'Philip Cygan', role: 'Teacher Coach' }] },
     DC: { region: 'Mid Atlantic', people: [{ open: true }] },
     NJ: { region: 'New Jersey', people: [{ name: 'Jennifer Stranz', role: 'Teacher Coach', city: 'Newark' }, { name: 'Amber Ginsberg', role: 'Teacher Coach', city: 'Newark' }, { name: 'Mariah Jukes', role: 'Teacher Coach', city: 'Newark' }, { name: 'TBD', role: 'Teacher Coach', city: 'Newark' }] },
-    NY: { region: 'New York', people: [{ name: 'Robert Mullen', role: 'Teacher Coach' }] },
+    NY: { region: 'New York', people: [{ name: 'Robert Mullen', role: 'Teacher Coach' }, { name: 'Brenna Venegas', role: 'Contract Coach', city: 'NYC' }, { name: 'Castenzio Venegas', role: 'Contract Coach', city: 'NYC' }] },
     OK: { region: 'Oklahoma', people: [{ name: 'Janou Farrell', role: 'Teacher Coach' }] },
     SC: { region: 'South Carolina', people: [{ name: 'LaWanna McClease', role: 'Teacher Coach' }] }
   };
