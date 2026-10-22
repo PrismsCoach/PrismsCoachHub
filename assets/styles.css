@@ -325,7 +325,7 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
 .fg-step:last-child { margin-bottom: 0; }
 .fg-step-label { font-size: 13.5px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
 
-.fg-daytype-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.fg-daytype-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
 
 .fg-daytype-btn {
   background: white; border: 1.5px solid var(--gray-200); border-radius: 10px;
@@ -365,7 +365,44 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
 .fg-example { font-size: 13.5px; color: var(--gray-700); line-height: 1.6; background: var(--navy-light); border-radius: 8px; padding: 10px 14px; }
 .fg-example strong { color: var(--navy); }
 
+.fg-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.fg-pill { display: inline-flex; align-items: baseline; gap: 6px; font-size: 12.5px; font-weight: 700; color: var(--pink); background: var(--pink-light); border-radius: 999px; padding: 5px 13px; }
+a.fg-pill:hover { background: var(--pink); color: white; }
+a.fg-pill:hover .fg-pill-note { color: white; }
+.fg-pill-note { font-size: 11px; font-weight: 400; color: var(--gray-600); }
+
+.fg-trouble { background: var(--navy-light); border-radius: 10px; padding: 14px 16px; margin-bottom: 16px; }
+.fg-trouble-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--navy); margin-bottom: 8px; }
+.fg-trouble-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px 20px; }
+.fg-trouble-item { font-size: 13px; color: var(--gray-700); line-height: 1.5; }
+.fg-trouble-item strong { display: block; font-size: 12px; color: var(--navy); }
+
 .fg-print-btn { border: none; cursor: pointer; margin-top: 4px; }
+
+/* ─── Readiness Check (Coaching page) ───────────────────── */
+.readiness-card { margin-top: 16px; }
+.readiness-intro { font-size: 13px; color: var(--gray-600); margin: -4px 0 12px; }
+.readiness-table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.5; }
+.readiness-table th, .readiness-table td { text-align: left; vertical-align: top; padding: 10px 12px; border-top: 1px solid var(--gray-100); color: var(--gray-700); }
+.readiness-table thead th { border-top: none; padding-top: 0; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-400); }
+.readiness-table tbody th { width: 20%; font-weight: 700; color: var(--navy); }
+.readiness-note { margin-top: 14px; padding-left: 12px; border-left: 3px solid var(--pink); font-size: 13px; font-weight: 500; color: var(--gray-700); line-height: 1.55; }
+.readiness-link { display: inline-block; margin-top: 12px; }
+
+/* ─── Home: Our Approach beside the task cards ───────────── */
+.approach-split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.approach-split .action-grid { grid-template-columns: 1fr; }
+.approach-card { padding: 20px 22px; }
+.approach-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-400); margin-bottom: 8px; }
+.approach-elements { margin-bottom: 18px; font-size: 13.5px; line-height: 1.55; }
+.approach-elements li { margin-bottom: 6px; }
+.approach-elements strong { color: var(--navy); }
+.arc-steps { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 8px; }
+.arc-step { background: var(--navy-light); color: var(--navy); font-size: 12.5px; font-weight: 700; padding: 5px 13px; border-radius: 999px; }
+.arc-arrow { color: var(--pink); font-weight: 700; }
+.approach-note { font-size: 12.5px; color: var(--gray-600); margin-bottom: 18px; }
+.approach-tagline { font-size: 16px; font-weight: 700; color: var(--pink); margin-bottom: 14px; }
+.approach-link { display: inline-block; }
 
 .fg-empty { font-size: 13px; color: var(--gray-400); font-style: italic; }
 
@@ -446,11 +483,20 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
   .identity-grid { grid-template-columns: 1fr 1fr; }
   .action-grid { grid-template-columns: 1fr 1fr; }
   .fg-daytype-grid { grid-template-columns: 1fr; }
+  .approach-split { grid-template-columns: 1fr; gap: 24px; }
+  .approach-split .action-grid { grid-template-columns: 1fr 1fr; }
+  .readiness-table thead { display: none; }
+  .readiness-table, .readiness-table tbody, .readiness-table tr, .readiness-table th, .readiness-table td { display: block; width: 100%; }
+  .readiness-table tr { padding: 10px 0; border-top: 1px solid var(--gray-100); }
+  .readiness-table th, .readiness-table td { border-top: none; padding: 3px 0; }
+  .readiness-table tbody th { width: 100%; font-size: 14px; }
+  .readiness-table td::before { content: attr(data-label); display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-400); margin-top: 4px; }
 }
 @media (max-width: 560px) {
   .cycle-grid { grid-template-columns: 1fr; }
   .identity-grid { grid-template-columns: 1fr; }
   .action-grid { grid-template-columns: 1fr; }
+  .approach-split .action-grid { grid-template-columns: 1fr; }
   .tool-card.tool-compact { width: 100%; flex: 1 1 100%; }
   .tool-card.tool-compact .tool-card-title { white-space: normal; }
 }

@@ -21,8 +21,20 @@ var DAY_TYPES = [
   { id: 'vr-co-taught', label: 'VR Co-Taught', hint: 'You and the teacher share the VR lesson' },
   { id: 'vr-teacher-led', label: 'VR Teacher-Led', hint: 'Teacher leads the VR lesson' },
   { id: 'transfer-co-taught', label: 'Transfer Co-Taught', hint: 'You and the teacher share Transfer Day' },
-  { id: 'transfer-teacher-led', label: 'Transfer Teacher-Led', hint: 'Teacher leads Transfer Day' }
+  { id: 'transfer-teacher-led', label: 'Transfer Teacher-Led', hint: 'Teacher leads Transfer Day' },
+  { id: 'plc', label: 'PLC', hint: 'Supporting a group of teachers' }
 ];
+
+// ─── Core Instructional Routines ─────────────────────────────────────────
+// Linked to the one-pager for each routine. Each day type lists the
+// routines it relies on (see `routines` on the guides below).
+var ROUTINES = {
+  hardware:   { name: 'Hardware & Technology', url: 'https://docs.google.com/document/d/131Kq3SoUH0xbrTfO9hX8bMVBVD7ZP8uYA0bbJdxx92w/view' },
+  jitf:       { name: 'Just-in-Time Feedback', url: 'https://docs.google.com/document/d/1tD7wYrmV7Pap2vlmk4nphd-go509Y1AQCuWJXcAVtE8/view' },
+  writing:    { name: 'Writing & Discourse', url: 'https://docs.google.com/document/d/1uUQKxixOcYQxydBR3wTAA7KQbcP831ja19Ctvu6minc/view' },
+  assessment: { name: 'Assessment & Revision', url: 'https://docs.google.com/document/d/1z6AzlSlc2FFHdFNUWYLp7OaHxU5Nt2P7iaI_xrXs59g/view' },
+  spaced:     { name: 'Spaced Repetition Practice', url: 'https://docs.google.com/document/d/1gbXToWoaYHoCdDqa3sWR5lWM8L60YJC8g8A6-ME6I4g/view' }
+};
 
 // ─── Printable guide — generic checklist shared by every day type ─────────
 // Folded into the print output alongside the day-specific howToCoach
@@ -60,6 +72,25 @@ var COACHING_DAY_GUIDES = {
     teacherRole: 'Remain actively involved, learn and practice the routines, manage students, participate in troubleshooting, and prepare to lead future VR experiences.',
     success: 'Students can independently access and navigate the VR environment, classroom routines are established, student tech helpers are ready, and the teacher feels prepared for the first Content Module.',
     beforeExtra: 'Confirm student tech helpers have been identified',
+    routines: [{ id: 'hardware' }, { id: 'writing', note: 'Tutorial Synthesis Activity' }],
+    surveyLinks: {
+      title: 'Student Pre-Survey',
+      links: [
+        { label: 'English', url: 'https://bit.ly/44WQ7di' },
+        { label: 'Spanish', url: 'https://bit.ly/4wEyvPD' }
+      ]
+    },
+    troubleshooting: {
+      title: 'Tutorial Day Troubleshooting',
+      items: [
+        { label: 'Controllers', text: 'Check the battery; re-pair if needed' },
+        { label: 'Boundary', text: 'Reset the boundary and floor height' },
+        { label: 'Wifi errors', text: 'Reconnect in settings' },
+        { label: 'Blurry view', text: 'Adjust the IPD and reposition the headset' },
+        { label: 'Bugs', text: 'Restart the app, then the headset, then report to the teacher' },
+        { label: 'Bypass Mode', text: 'Language settings' }
+      ]
+    },
     howToCoach: {
       beforeVisit: [
         'Confirm headsets are charged and updated',
@@ -101,6 +132,7 @@ var COACHING_DAY_GUIDES = {
     coachRole: 'Plan with the teacher, share facilitation responsibilities, model selected instructional or technical moves, and provide just-in-time support without taking over the entire experience.',
     teacherRole: 'Actively facilitate agreed-upon portions of the lesson, manage students, monitor learning, and practice the routines that will support future independence.',
     success: 'The complete VR learning experience is protected, responsibilities are genuinely shared, and the teacher is ready to assume greater ownership during the next opportunity.',
+    routines: [{ id: 'hardware' }, { id: 'jitf' }, { id: 'writing' }],
     howToCoach: {
       beforeVisit: [
         "Agree on which portions of Just-in-Time Feedback and the post-VR synthesis/discussion you'll each facilitate",
@@ -141,6 +173,7 @@ var COACHING_DAY_GUIDES = {
     coachRole: 'Observe, collect evidence, support only when needed, and provide specific feedback connected to the five routines and the agreed-upon coaching goal.',
     teacherRole: 'Lead the lesson, manage the technology and students, monitor student thinking, and facilitate the instructional arc.',
     success: 'The teacher successfully leads the VR experience and leaves with a clearly identified strength and an actionable next step.',
+    routines: [{ id: 'hardware' }, { id: 'jitf' }, { id: 'writing' }],
     howToCoach: {
       beforeVisit: [
         "Agree on the coaching goal and what evidence you'll collect",
@@ -180,6 +213,7 @@ var COACHING_DAY_GUIDES = {
     coachRole: 'Plan and facilitate selected portions with the teacher, model questioning or discourse moves, and help use student thinking and CFU evidence to guide instruction.',
     teacherRole: 'Lead agreed-upon portions of the lesson, connect the student experience to disciplinary concepts, facilitate writing and discourse, and respond to student understanding.',
     success: 'Students make the intended connection between the immersive experience and the formal content, and the teacher is increasingly prepared to lead Transfer Day independently.',
+    routines: [{ id: 'writing' }, { id: 'assessment', note: 'when the CFU is part of the day' }],
     howToCoach: {
       beforeVisit: [
         'Review the AI feedback data together ahead of time if possible',
@@ -220,6 +254,7 @@ var COACHING_DAY_GUIDES = {
     coachRole: 'Observe, collect evidence, support only when necessary, and provide focused feedback connected to the agreed-upon goal.',
     teacherRole: 'Lead the lesson, facilitate writing and discourse, monitor understanding, use CFU evidence, and support revision.',
     success: 'The teacher protects the complete Transfer Day arc and uses student evidence to determine the next instructional step.',
+    routines: [{ id: 'writing' }, { id: 'assessment', note: 'when the CFU is part of the day' }],
     howToCoach: {
       beforeVisit: [
         "Agree on the coaching goal and what evidence you'll collect",
@@ -250,6 +285,68 @@ var COACHING_DAY_GUIDES = {
       examples: [
         { if: 'the teacher is about to skip revision for time', then: 'a quiet prompt to protect even a shortened version beats skipping it entirely' },
         { if: "revision pathway doesn't match the error type", then: 'flag it for the debrief rather than correcting it live' }
+      ]
+    }
+  },
+
+  plc: {
+    purpose: 'Prepare instruction, review evidence, or plan implementation with a group of teachers rather than coaching in a classroom.',
+    coachRole: 'Review Teacher Dashboard information, CFU results, and student work. Use the district-aligned Unit Map to plan upcoming modules, Skill Builders, and paper-and-pencil practice. Keep teachers doing the thinking, and help them identify the next instructional step and the preparation or support needed.',
+    teacherRole: 'Use the Unit Map and module resources to prepare instruction, anticipate misconceptions and plan responses, interpret student work and CFU results, and name what they will implement and prepare next.',
+    success: 'Teachers leave with a clear next instructional step and specific actions, owners, and dates. PLC discussion and rehearsal show planning readiness, not independent classroom implementation.',
+    routines: [{ id: 'assessment', note: 'when reviewing CFU results' }, { id: 'spaced', note: 'when planning Skill Builders' }],
+    duringLabel: 'During the PLC',
+    printShared: {
+      before: [
+        'Confirm the date, school, participating teachers, and PLC purpose',
+        'Confirm the Unit Map, upcoming modules, and the materials or data you need'
+      ],
+      during: [
+        'Protect the instructional purpose and learning arc',
+        'Coach toward increasing teacher ownership',
+        'Capture evidence connected to the coaching goal'
+      ],
+      after: [
+        'Record the PLC in Service Tracker and complete the Coaching AAR within 48–72 hours, noting that the evidence came from the PLC, not classroom implementation',
+        'Send the post-coaching email and share the appropriate resources',
+        'Identify strengths and one or two actionable next steps',
+        'Confirm the next implementation opportunity or coaching date when possible',
+        'Communicate significant successes, needs, or risks to the appropriate CSM or team member'
+      ]
+    },
+    howToCoach: {
+      beforeVisit: [
+        'Confirm the PLC purpose with the participating teachers or the school contact',
+        'Review the district-aligned Unit Map, upcoming modules, and relevant implementation information',
+        'Gather the Lesson Guides, student work, CFU results, or Teacher Dashboard reports you will need'
+      ],
+      duringLesson: [
+        'Complete the items that match the PLC purpose',
+        'Give teachers opportunities to explain their reasoning and make decisions',
+        'Lesson study: help teachers internalize the module, anticipate misconceptions, and rehearse selected facilitation practices',
+        'Student-work or CFU review: help teachers identify patterns and decide on revision, instruction, or practice needs',
+        'Implementation planning: confirm upcoming modules, preparation, and how required components will be completed'
+      ],
+      lookFor: {
+        good: [
+          'Teachers use the Unit Map and module resources to prepare instruction',
+          'Teachers anticipate misconceptions and explain how they will respond',
+          'Teachers interpret student work and CFUs to choose the support students need'
+        ],
+        watch: [
+          'You are walking teachers through the Unit Map or naming the misconceptions and next steps for them',
+          'Teachers name misconceptions but need support planning responses',
+          'The meeting ends without specific actions, owners, or dates'
+        ]
+      },
+      afterVisit: [
+        'Did the teachers, not you, name the next steps?',
+        'Does every action have an owner and a date?',
+        'When you record the PLC in the Coaching AAR, note that the evidence came from the PLC, not classroom implementation'
+      ],
+      examples: [
+        { if: 'you are tempted to share how you would teach the lesson', then: 'ask first — "Before I share, what do you predict students will struggle with in the second scene?"' },
+        { if: 'the meeting is wrapping up', then: 'close with owners and dates instead of "great meeting" — who annotates the Lesson Guide, who pulls CFU results, and who sends the notes' }
       ]
     }
   }

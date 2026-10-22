@@ -66,6 +66,46 @@
       '</div>';
   }
 
+  // ─── Core routines ───────────────────────────────────────────────────
+  function routineList(g) {
+    return (g.routines || []).map(function (r) {
+      var def = ROUTINES[r.id] || { name: r.id };
+      return { name: def.name, url: def.url, note: r.note };
+    });
+  }
+
+  function routinesHtml(g) {
+    var list = routineList(g);
+    if (!list.length) return '';
+    return '<div class="fg-block"><div class="fg-label">Core Instructional Routines</div><div class="fg-pills">' +
+      list.map(function (r) {
+        var label = escapeHtml(r.name);
+        var note = r.note ? '<span class="fg-pill-note">' + escapeHtml(r.note) + '</span>' : '';
+        return r.url
+          ? '<a class="fg-pill" href="' + r.url + '" target="_blank" rel="noopener">' + label + ' ↗' + note + '</a>'
+          : '<span class="fg-pill">' + label + note + '</span>';
+      }).join('') +
+      '</div></div>';
+  }
+
+  function surveyHtml(g) {
+    if (!g.surveyLinks) return '';
+    return '<div class="fg-block"><div class="fg-label">' + escapeHtml(g.surveyLinks.title) + '</div><div class="fg-pills">' +
+      g.surveyLinks.links.map(function (l) {
+        return '<a class="fg-pill" href="' + l.url + '" target="_blank" rel="noopener">' + escapeHtml(l.label) + ' ↗</a>';
+      }).join('') +
+      '</div></div>';
+  }
+
+  function troubleshootingHtml(g) {
+    if (!g.troubleshooting) return '';
+    return '<div class="fg-trouble"><div class="fg-trouble-title">' + escapeHtml(g.troubleshooting.title) + '</div><div class="fg-trouble-grid">' +
+      g.troubleshooting.items.map(function (i) {
+        return '<div class="fg-trouble-item"><strong>' + escapeHtml(i.label) + '</strong>' + escapeHtml(i.text) + '</div>';
+      }).join('') +
+      '</div></div>';
+  }
+
   // ─── Printable guide ─────────────────────────────────────────────────
   // Combines the day-specific "How to Coach This Day" content with the
   // generic prep/follow-up checklist so a printed guide is complete on
@@ -76,16 +116,17 @@
     if (!dayDef || !g) return '';
     var h = g.howToCoach || {};
 
-    var before = PRINT_SHARED.before.slice();
+    var shared = g.printShared || PRINT_SHARED;
+    var before = shared.before.slice();
     if (g.beforeExtra) before.push(g.beforeExtra);
     before = before.concat(h.beforeVisit || []);
 
-    var during = (h.duringLesson || []).concat(PRINT_SHARED.during);
+    var during = (h.duringLesson || []).concat(shared.during);
 
     var lookForGood = (h.lookFor || {}).good || [];
     var lookForWatch = (h.lookFor || {}).watch || [];
 
-    var after = (h.afterVisit || []).concat(PRINT_SHARED.after);
+    var after = (h.afterVisit || []).concat(shared.after);
 
     function textSection(title, text) {
       return '<div class="print-section"><h2>' + escapeHtml(title) + '</h2><p>' + escapeHtml(text) + '</p></div>';
@@ -103,8 +144,18 @@
     body += textSection('Teacher Role', g.teacherRole);
     body += textSection('What Success Looks Like', g.success);
 
+    var routineNames = routineList(g).map(function (r) { return r.name + (r.note ? ' (' + r.note + ')' : ''); });
+    body += listSection('Core Instructional Routines', routineNames);
+
+    if (g.surveyLinks) {
+      body += listSection(g.surveyLinks.title, g.surveyLinks.links.map(function (l) { return l.label + ': ' + l.url; }));
+    }
+    if (g.troubleshooting) {
+      body += listSection(g.troubleshooting.title, g.troubleshooting.items.map(function (i) { return i.label + ': ' + i.text; }));
+    }
+
     body += listSection('Before the Visit', before);
-    body += listSection('During the Lesson', during);
+    body += listSection(g.duringLabel || 'During the Lesson', during);
 
     if (lookForGood.length || lookForWatch.length) {
       body += '<div class="print-section"><h2>What to Look and Listen For</h2>';
@@ -142,7 +193,7 @@
   }
 
   // ─── How to Coach This Day — collapsible, on-screen only ─────────────
-  function renderHowToCoach(h) {
+  function renderHowToCoach(h, duringLabel) {
     if (!h) return '';
     var html = '<details class="fg-how-to">';
     html += '<summary>How to Coach This Day</summary>';
@@ -152,7 +203,7 @@
       html += '<div class="fg-sub-block"><div class="fg-sub-label">Before the Visit</div>' + listHtml(h.beforeVisit, 'tight-list') + '</div>';
     }
     if (h.duringLesson && h.duringLesson.length) {
-      html += '<div class="fg-sub-block"><div class="fg-sub-label">During the Lesson</div>' + listHtml(h.duringLesson, 'tight-list') + '</div>';
+      html += '<div class="fg-sub-block"><div class="fg-sub-label">' + escapeHtml(duringLabel || 'During the Lesson') + '</div>' + listHtml(h.duringLesson, 'tight-list') + '</div>';
     }
     var good = (h.lookFor || {}).good || [];
     var watch = (h.lookFor || {}).watch || [];
@@ -190,7 +241,10 @@
     html += '<div class="fg-block"><div class="fg-label">Coach Role</div><p class="fg-text">' + escapeHtml(g.coachRole) + '</p></div>';
     html += '<div class="fg-block"><div class="fg-label">Teacher Role</div><p class="fg-text">' + escapeHtml(g.teacherRole) + '</p></div>';
     html += '<div class="fg-block"><div class="fg-label">What Success Looks Like</div><p class="fg-text">' + escapeHtml(g.success) + '</p></div>';
-    html += renderHowToCoach(g.howToCoach);
+    html += routinesHtml(g);
+    html += surveyHtml(g);
+    html += troubleshootingHtml(g);
+    html += renderHowToCoach(g.howToCoach, g.duringLabel);
     html += '<button type="button" class="cycle-card-link fg-print-btn">Print Full Guide</button>';
     html += '</div>';
     resultEl.innerHTML = html;
