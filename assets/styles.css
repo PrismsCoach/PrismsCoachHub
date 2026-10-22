@@ -303,6 +303,12 @@ a.cycle-card-title:hover { color: var(--pink); text-decoration: underline; }
 
 /* Puts a section's title/description on the left and its tool-card on the right,
    inline, instead of stacked — cuts vertical space considerably. */
+.close-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: stretch; }
+.close-col { display: flex; flex-direction: column; margin-bottom: 0; }
+.close-col .card-tag { align-self: flex-start; }
+.close-col .tight-list { font-size: 13.5px; line-height: 1.55; margin-bottom: 18px; }
+.close-col .tight-list li { margin-bottom: 5px; }
+.close-col .tool-card.tool-compact { margin-top: auto; width: 100%; flex: 0 0 auto; }
 .section-tool-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
 .section-tool-info { flex: 1; min-width: 220px; }
 .section-tool-info .section-title { margin-bottom: 3px; }
@@ -495,6 +501,7 @@ a.fg-pill:hover .fg-pill-note { color: white; }
   .action-grid { grid-template-columns: 1fr 1fr; }
   .fg-daytype-grid { grid-template-columns: 1fr; }
   .approach-split { grid-template-columns: 1fr; gap: 24px; }
+  .close-grid { grid-template-columns: 1fr; }
   .approach-banner { flex-direction: column; align-items: flex-start; gap: 14px; }
   .approach-tagline { max-width: none; border-left: none; border-top: 3px solid var(--pink); padding: 12px 0 0; }
   .approach-split .action-grid { grid-template-columns: 1fr 1fr; }
