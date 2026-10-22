@@ -59,7 +59,7 @@
     TX: { region: 'Travel', travel: true, people: [{ name: 'Doug Torres', role: 'Travel Coach' }] },
     AL: { region: 'Alabama', people: [{ name: 'Tynisa Williams', role: 'Teacher Coach' }] },
     CA: { region: 'California', people: [{ name: 'Ioana Robles', role: 'Teacher Coach', city: 'CV/CA' }, { name: 'Jeremy Fishman', role: 'Teacher Coach' }, { name: 'Angela Shaheen', role: 'Teacher Coach' }, { open: true }] },
-    FL: { region: 'Florida', people: [{ name: 'Michelle Walker', role: 'Teacher Coach' }, { name: 'Duke Chinn', role: 'Teacher Coach', city: 'Broward' }, { name: 'Taheerah Nasai', role: 'Teacher Coach', city: 'Broward' }, { name: 'Jordan Rhoden', role: 'Teacher Coach', city: 'Broward' }, { name: 'Jessica Beckford', role: 'Teacher Coach', city: 'Broward' }, { open: true }] },
+    FL: { region: 'Florida', people: [{ name: 'Michelle Walker', role: 'Teacher Coach' }, { name: 'Duke Chinn', role: 'Teacher Coach', city: 'Broward' }, { name: 'Taheerah Nasai', role: 'Teacher Coach', city: 'Broward' }, { name: 'Jordan Rhoden', role: 'Teacher Coach', city: 'Broward' }, { name: 'Jessica Beckford', role: 'Teacher Coach', city: 'Broward' }] },
     GA: { region: 'Georgia', people: [{ name: 'Sandreka Brown', role: 'Teacher Coach' }] },
     MI: { region: 'Michigan', people: [{ open: true }] },
     MD: { region: 'Mid Atlantic', people: [{ name: 'Philip Cygan', role: 'Teacher Coach' }] },
@@ -67,7 +67,7 @@
     NJ: { region: 'New Jersey', people: [{ name: 'Jennifer Stranz', role: 'Teacher Coach', city: 'Newark' }, { name: 'Amber Ginsberg', role: 'Teacher Coach', city: 'Newark' }, { name: 'Mariah Jukes', role: 'Teacher Coach', city: 'Newark' }, { name: 'TBD', role: 'Teacher Coach', city: 'Newark' }] },
     NY: { region: 'New York', people: [{ name: 'Brenna Venegas', role: 'Contract Coach', city: 'NYC' }, { name: 'Castenzio Venegas', role: 'Contract Coach', city: 'NYC' }] },
     OK: { region: 'Oklahoma', people: [{ name: 'Janou Farrell', role: 'Teacher Coach' }] },
-    SC: { region: 'South Carolina', people: [{ name: 'LaWanna McClease', role: 'Teacher Coach' }] }
+    SC: { region: 'South Carolina', people: [{ name: 'LaWanna McClease', role: 'Teacher Coach' }, { open: true }] }
   };
 
   var grid = document.getElementById('state-grid');
