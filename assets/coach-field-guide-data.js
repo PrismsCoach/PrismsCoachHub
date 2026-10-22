@@ -73,13 +73,6 @@ var COACHING_DAY_GUIDES = {
     success: 'Students can independently access and navigate the VR environment, classroom routines are established, student tech helpers are ready, and the teacher feels prepared for the first Content Module.',
     beforeExtra: 'Confirm student tech helpers have been identified',
     routines: [{ id: 'hardware' }, { id: 'writing', note: 'Tutorial Synthesis Activity' }],
-    surveyLinks: {
-      title: 'Student Pre-Survey',
-      links: [
-        { label: 'English', url: 'https://bit.ly/44WQ7di' },
-        { label: 'Spanish', url: 'https://bit.ly/4wEyvPD' }
-      ]
-    },
     troubleshooting: {
       title: 'Tutorial Day Troubleshooting',
       items: [
@@ -87,8 +80,7 @@ var COACHING_DAY_GUIDES = {
         { label: 'Boundary', text: 'Reset the boundary and floor height' },
         { label: 'Wifi errors', text: 'Reconnect in settings' },
         { label: 'Blurry view', text: 'Adjust the IPD and reposition the headset' },
-        { label: 'Bugs', text: 'Restart the app, then the headset, then report to the teacher' },
-        { label: 'Bypass Mode', text: 'Language settings' }
+        { label: 'Bugs', text: 'Restart the app, then the headset, then report to the teacher' }
       ]
     },
     howToCoach: {

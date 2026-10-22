@@ -88,15 +88,6 @@
       '</div></div>';
   }
 
-  function surveyHtml(g) {
-    if (!g.surveyLinks) return '';
-    return '<div class="fg-block"><div class="fg-label">' + escapeHtml(g.surveyLinks.title) + '</div><div class="fg-pills">' +
-      g.surveyLinks.links.map(function (l) {
-        return '<a class="fg-pill" href="' + l.url + '" target="_blank" rel="noopener">' + escapeHtml(l.label) + ' ↗</a>';
-      }).join('') +
-      '</div></div>';
-  }
-
   function troubleshootingHtml(g) {
     if (!g.troubleshooting) return '';
     return '<div class="fg-trouble"><div class="fg-trouble-title">' + escapeHtml(g.troubleshooting.title) + '</div><div class="fg-trouble-grid">' +
@@ -147,9 +138,6 @@
     var routineNames = routineList(g).map(function (r) { return r.name + (r.note ? ' (' + r.note + ')' : ''); });
     body += listSection('Core Instructional Routines', routineNames);
 
-    if (g.surveyLinks) {
-      body += listSection(g.surveyLinks.title, g.surveyLinks.links.map(function (l) { return l.label + ': ' + l.url; }));
-    }
     if (g.troubleshooting) {
       body += listSection(g.troubleshooting.title, g.troubleshooting.items.map(function (i) { return i.label + ': ' + i.text; }));
     }
@@ -242,7 +230,6 @@
     html += '<div class="fg-block"><div class="fg-label">Teacher Role</div><p class="fg-text">' + escapeHtml(g.teacherRole) + '</p></div>';
     html += '<div class="fg-block"><div class="fg-label">What Success Looks Like</div><p class="fg-text">' + escapeHtml(g.success) + '</p></div>';
     html += routinesHtml(g);
-    html += surveyHtml(g);
     html += troubleshootingHtml(g);
     html += renderHowToCoach(g.howToCoach, g.duringLabel);
     html += '<button type="button" class="cycle-card-link fg-print-btn">Print Full Guide</button>';
