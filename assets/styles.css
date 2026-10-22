@@ -138,11 +138,12 @@ a.action-card-title:hover { color: var(--pink); text-decoration: underline; }
 .action-card-desc { font-size: 13px; color: var(--gray-600); line-height: 1.55; flex: 1; }
 
 /* ─── Where Things Live (home reference list) ───────────── */
-.truth-list { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-.truth-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; border-top: 1px solid var(--gray-100); flex-wrap: wrap; }
-.truth-row:first-child { border-top: none; }
-.truth-need { font-size: 13.5px; color: var(--gray-700); font-weight: 500; flex: 1; min-width: 220px; }
-.truth-where { font-size: 13px; font-weight: 700; display: flex; gap: 14px; flex-wrap: wrap; }
+.truth-list { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; }
+.truth-row { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 13px 20px; border-top: 1px solid var(--gray-100); }
+.truth-row:nth-child(-n+2) { border-top: none; }
+.truth-row:nth-child(odd) { border-right: 1px solid var(--gray-100); }
+.truth-need { font-size: 12.5px; color: var(--gray-600); font-weight: 500; }
+.truth-where { font-size: 13.5px; font-weight: 700; display: flex; gap: 14px; flex-wrap: wrap; }
 .truth-where a { color: var(--pink); }
 .truth-where a:hover { text-decoration: underline; }
 
@@ -395,9 +396,8 @@ a.fg-pill:hover .fg-pill-note { color: white; }
 .approach-split .action-card { display: grid; grid-template-columns: 1fr auto; align-items: center; align-content: center; gap: 2px 12px; padding: 11px 16px 12px; border-top-width: 3px; border-radius: 12px; box-shadow: 0 3px 12px rgba(53,60,120,0.10); }
 .approach-split .action-card:hover { transform: translateY(-2px); }
 .approach-split .action-card-title { grid-column: 1; grid-row: 1; font-size: 15px; }
-.approach-split .action-card-desc { grid-column: 1 / -1; grid-row: 2; font-size: 12.5px; line-height: 1.4; }
 .approach-split .action-card .cycle-card-link { grid-column: 2; grid-row: 1; align-self: center; padding: 3px 10px; font-size: 12px; }
-.approach-split .action-card-links { grid-column: 1 / -1; grid-row: 3; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.approach-split .action-card-links { grid-column: 1 / -1; grid-row: 2; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 .cycle-outcome { font-size: 13.5px; font-weight: 700; color: var(--pink); line-height: 1.4; margin-top: 4px; padding-top: 10px; border-top: 1px solid var(--gray-100); }
 .approach-banner { display: flex; align-items: center; justify-content: space-between; gap: 28px; background: var(--navy-light); border-radius: 14px; padding: 20px 26px; font-size: 14.5px; line-height: 1.6; color: var(--gray-700); }
 .approach-banner-text { flex: 1; }
@@ -501,6 +501,9 @@ a.fg-pill:hover .fg-pill-note { color: white; }
   .fg-daytype-grid { grid-template-columns: 1fr; }
   .approach-split { grid-template-columns: 1fr; gap: 24px; }
   .close-grid { grid-template-columns: 1fr; }
+  .truth-list { grid-template-columns: 1fr; }
+  .truth-row:nth-child(2) { border-top: 1px solid var(--gray-100); }
+  .truth-row:nth-child(odd) { border-right: none; }
   .approach-banner { flex-direction: column; align-items: flex-start; gap: 14px; }
   .approach-tagline { max-width: none; border-left: none; border-top: 3px solid var(--pink); padding: 12px 0 0; }
   .approach-split .action-grid { grid-template-columns: 1fr 1fr; }
