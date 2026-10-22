@@ -391,7 +391,14 @@ a.fg-pill:hover .fg-pill-note { color: white; }
 
 /* ─── Home: Our Approach beside the task cards ───────────── */
 .approach-split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
-.approach-split .action-grid { grid-template-columns: 1fr; }
+.approach-split .action-grid { grid-template-columns: 1fr; gap: 10px; }
+.approach-split .action-card { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 12px; padding: 11px 16px 12px; border-top-width: 3px; border-radius: 12px; box-shadow: 0 3px 12px rgba(53,60,120,0.10); }
+.approach-split .action-card:hover { transform: translateY(-2px); }
+.approach-split .action-card-title { grid-column: 1; grid-row: 1; font-size: 15px; }
+.approach-split .action-card-desc { grid-column: 1 / -1; grid-row: 2; font-size: 12.5px; line-height: 1.4; }
+.approach-split .action-card .cycle-card-link { grid-column: 2; grid-row: 1; align-self: center; padding: 3px 10px; font-size: 12px; }
+.cycle-outcome { font-size: 13.5px; font-weight: 700; color: var(--pink); line-height: 1.4; margin-top: 4px; padding-top: 10px; border-top: 1px solid var(--gray-100); }
+.arc-time { font-weight: 400; font-size: 11px; color: var(--gray-600); margin-left: 4px; }
 .approach-card { padding: 20px 22px; }
 .approach-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-400); margin-bottom: 8px; }
 .approach-elements { margin-bottom: 18px; font-size: 13.5px; line-height: 1.55; }

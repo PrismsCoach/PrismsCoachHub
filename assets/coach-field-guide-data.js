@@ -59,7 +59,7 @@ var PRINT_SHARED = {
     'Share the appropriate leave-behind or resources',
     'Identify strengths and one or two actionable next steps',
     'Confirm the next implementation opportunity or coaching date when possible',
-    'Communicate significant successes, needs, or risks to the appropriate CSM or team member'
+    'Communicate significant successes and unresolved barriers to the appropriate CSM or team member, naming the action needed, who is responsible, and the follow-up date'
   ]
 };
 
@@ -311,7 +311,7 @@ var COACHING_DAY_GUIDES = {
         'Send the post-coaching email and share the appropriate resources',
         'Identify strengths and one or two actionable next steps',
         'Confirm the next implementation opportunity or coaching date when possible',
-        'Communicate significant successes, needs, or risks to the appropriate CSM or team member'
+        'Communicate significant successes and unresolved barriers to the appropriate CSM or team member, naming the action needed, who is responsible, and the follow-up date'
       ]
     },
     howToCoach: {
