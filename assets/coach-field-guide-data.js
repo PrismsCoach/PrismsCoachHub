@@ -54,7 +54,7 @@ var PRINT_SHARED = {
   ],
   after: [
     'Complete the Service Tracker by class period',
-    'Complete the Coaching AAR within 48–72 hours',
+    'Complete the Coaching AAR within 48 hours',
     'Send the post-coaching email',
     'Share the appropriate leave-behind or resources',
     'Identify strengths and one or two actionable next steps',
@@ -307,7 +307,7 @@ var COACHING_DAY_GUIDES = {
         'Capture evidence connected to the coaching goal'
       ],
       after: [
-        'Record the PLC in Service Tracker and complete the Coaching AAR within 48–72 hours, noting that the evidence came from the PLC, not classroom implementation',
+        'Record the PLC in Service Tracker and complete the Coaching AAR within 48 hours, noting that the evidence came from the PLC, not classroom implementation',
         'Send the post-coaching email and share the appropriate resources',
         'Identify strengths and one or two actionable next steps',
         'Confirm the next implementation opportunity or coaching date when possible',
