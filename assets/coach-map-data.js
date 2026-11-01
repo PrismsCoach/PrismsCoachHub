@@ -67,6 +67,7 @@
     NJ: { region: 'New Jersey', people: [{ name: 'Jennifer Stranz', role: 'Teacher Coach', city: 'Newark' }, { name: 'Amber Ginsberg', role: 'Teacher Coach', city: 'Newark' }, { name: 'Mariah Jukes', role: 'Teacher Coach', city: 'Newark' }, { name: 'TBD', role: 'Teacher Coach', city: 'Newark' }] },
     NY: { region: 'New York', people: [{ name: 'Brenna Venegas', role: 'Contract Coach', city: 'NYC' }, { name: 'Castenzio Venegas', role: 'Contract Coach', city: 'NYC' }] },
     OK: { region: 'Oklahoma', people: [{ name: 'Janou Farrell', role: 'Teacher Coach' }] },
+    PA: { region: 'Pennsylvania', people: [{ name: 'Katie Harvey', role: 'Contract Coach' }] },
     SC: { region: 'South Carolina', people: [{ name: 'LaWanna McClease', role: 'Teacher Coach' }, { open: true }] }
   };
 
